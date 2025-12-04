@@ -414,6 +414,324 @@
             color: #1890ff;
             border-color: #1890ff;
         }
+
+        /* ========== 层级配置页面样式 ========== */
+        /* 配置操作栏 */
+        .config-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: white;
+            border-radius: 2px;
+            margin-bottom: 15px;
+        }
+        .config-toolbar-left {
+            display: flex;
+            align-items: center;
+        }
+        .config-tip {
+            font-size: 13px;
+            color: #722ed1;
+        }
+        .config-toolbar-right {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* 左树右表布局 */
+        .config-layout {
+            display: flex;
+            gap: 15px;
+            min-height: 500px;
+        }
+
+        /* 左侧树面板 */
+        .config-tree-panel {
+            width: 300px;
+            flex-shrink: 0;
+            background-color: white;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+        .config-tree-header {
+            padding: 12px 15px;
+            font-weight: 500;
+            border-bottom: 1px solid #f0f0f0;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        .config-tree-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 0;
+        }
+
+        /* 树节点样式 */
+        .tree-node {
+            user-select: none;
+        }
+        .tree-node-content {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .tree-node-content:hover {
+            background-color: #f5f5f5;
+        }
+        .tree-node-content.selected {
+            background-color: #e6f7ff;
+            border-right: 3px solid #1890ff;
+        }
+        .tree-node-content.disabled {
+            color: #999;
+            cursor: default;
+        }
+        .tree-node-content.fixed {
+            color: #999;
+            font-style: italic;
+        }
+        .tree-expand {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 4px;
+            font-size: 10px;
+            color: #999;
+            cursor: pointer;
+        }
+        .tree-expand:hover {
+            color: #1890ff;
+        }
+        .tree-icon {
+            margin-right: 6px;
+            font-size: 14px;
+        }
+        .tree-label {
+            flex: 1;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .tree-count {
+            font-size: 12px;
+            color: #999;
+            margin-left: 5px;
+        }
+        .tree-children {
+            display: none;
+        }
+        .tree-children.expanded {
+            display: block;
+        }
+        /* 层级缩进 */
+        .tree-level-1 .tree-node-content { padding-left: 15px; }
+        .tree-level-2 .tree-node-content { padding-left: 35px; }
+        .tree-level-3 .tree-node-content { padding-left: 55px; }
+        .tree-level-4 .tree-node-content { padding-left: 75px; }
+
+        /* 右侧配置面板 */
+        .config-table-panel {
+            flex: 1;
+            background-color: white;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+        .config-table-header {
+            padding: 12px 20px;
+            font-weight: 500;
+            border-bottom: 1px solid #f0f0f0;
+            color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .config-table-body {
+            flex: 1;
+            padding: 20px;
+            overflow: auto;
+        }
+        .config-empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #999;
+        }
+        .config-empty-state .empty-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        /* 配置表格 */
+        .config-table {
+            border-collapse: collapse;
+        }
+        .config-table th,
+        .config-table td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+            white-space: nowrap;
+        }
+        .config-table th:first-child,
+        .config-table td:first-child {
+            width: 40px;
+            text-align: center;
+        }
+        .config-table th {
+            background-color: #fafafa;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        .config-table tr:hover {
+            background-color: #fafafa;
+        }
+        .config-table .action-btns {
+            display: flex;
+            gap: 8px;
+        }
+        .config-table .action-btn {
+            padding: 2px 8px;
+            font-size: 12px;
+            border: 1px solid #d9d9d9;
+            background: white;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .config-table .action-btn:hover {
+            color: #1890ff;
+            border-color: #1890ff;
+        }
+        .config-table .action-btn.danger:hover {
+            color: #ff4d4f;
+            border-color: #ff4d4f;
+        }
+
+        /* 弹窗样式 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+        .modal-container {
+            background: white;
+            border-radius: 4px;
+            width: 420px;
+            max-width: 90%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .modal-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        .modal-body {
+            padding: 24px;
+        }
+        .modal-footer {
+            padding: 10px 16px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        .form-input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #d9d9d9;
+            border-radius: 2px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #40a9ff;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        }
+
+        /* CSV导入预览 */
+        .csv-preview {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #f0f0f0;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .csv-preview table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .csv-preview th,
+        .csv-preview td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: left;
+        }
+        .csv-preview th {
+            background: #fafafa;
+            position: sticky;
+            top: 0;
+        }
+        .csv-preview .row-new {
+            background-color: #f6ffed;
+        }
+        .csv-preview .row-exists {
+            background-color: #fff7e6;
+        }
+
+        /* 无归属用户说明 */
+        .unassigned-info {
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .unassigned-info .info-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .unassigned-info .info-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        .unassigned-info .info-desc {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.65);
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -437,12 +755,15 @@
 
     <!-- 主内容区域 -->
     <div class="main-content">
-        <div class="content-header">
-            <h2>平台层级关系数据统计</h2>
+        <div class="content-header" id="pageHeader">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <h2 id="pageTitle">平台层级关系数据统计</h2>
+                <button class="btn btn-default" id="btnBackToStats" style="display: none;">← 返回统计</button>
+            </div>
         </div>
 
         <!-- 筛选区域 -->
-        <div class="filter-section">
+        <div class="filter-section" id="filterSection">
             <!-- 第一行筛选 -->
             <div class="filter-row">
                 <!-- 报表类型 -->
@@ -538,11 +859,12 @@
                     <button class="btn btn-primary" id="btnSearch">查询</button>
                     <button class="btn btn-default" id="btnExport">导出</button>
                     <button class="btn btn-default" id="btnReset">重置</button>
+                    <button class="btn btn-default" id="btnHierarchyConfig" style="background-color: #722ed1; border-color: #722ed1; color: white;">⚙ 层级配置</button>
                 </div>
             </div>
         </div>
 
-        <div class="content-body">
+        <div class="content-body" id="statsTableContainer">
             <div class="table-container">
                 <table>
                     <thead>
@@ -575,6 +897,48 @@
                         <!-- 数据行将在这里显示 -->
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <!-- 层级配置区域（默认隐藏） -->
+        <div id="hierarchyConfigContainer" style="display: none;">
+            <!-- 配置操作栏 -->
+            <div class="config-toolbar">
+                <div class="config-toolbar-left">
+                    <span class="config-tip">💡 提示：点击左侧树节点，在右侧管理其下级成员</span>
+                </div>
+                <div class="config-toolbar-right">
+                    <button class="btn btn-default" id="btnDownloadTemplate">📄 下载模板</button>
+                    <button class="btn btn-default" id="btnCsvImport">📥 CSV导入</button>
+                    <button class="btn btn-primary" id="btnSaveConfig">💾 保存配置</button>
+                    <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+                </div>
+            </div>
+
+            <!-- 左树右表布局 -->
+            <div class="config-layout">
+                <!-- 左侧层级树 -->
+                <div class="config-tree-panel">
+                    <div class="config-tree-header">
+                        <span>组织架构</span>
+                    </div>
+                    <div class="config-tree-body" id="hierarchyTree">
+                        <!-- 树形结构将由JS渲染 -->
+                    </div>
+                </div>
+
+                <!-- 右侧配置表格 -->
+                <div class="config-table-panel">
+                    <div class="config-table-header" id="configPanelHeader">
+                        <span>请选择左侧节点</span>
+                    </div>
+                    <div class="config-table-body" id="configPanelBody">
+                        <div class="config-empty-state">
+                            <div class="empty-icon">👈</div>
+                            <p>请点击左侧树节点，查看和管理其下级成员</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1092,6 +1456,109 @@
                     <p style="font-size: 12px; color: #999; margin-top: 8px;">💡 月报+时间段模式：将多个月的数据汇总成一行，适合看季度或半年度的整体业绩，与示例3（月报+单月）形成对比</p>
                 </div>
             </div>
+
+            <!-- 层级配置功能说明 -->
+            <div style="margin-bottom: 25px; padding: 15px; background: linear-gradient(135deg, #722ed1 0%, #eb2f96 100%); border-radius: 8px; box-shadow: 0 2px 8px rgba(114, 46, 209, 0.15);">
+                <h4 style="font-size: 14px; font-weight: 500; margin-bottom: 10px; color: #fff;">⚙ 层级配置功能说明</h4>
+                <p style="font-size: 14px; color: rgba(255,255,255,0.95); line-height: 1.8; margin: 0;">
+                    层级配置用于管理「东总 → 总监 → 组长 → 业务员」的归属关系。点击筛选区的<b>「层级配置」</b>按钮进入配置页面。
+                </p>
+            </div>
+
+            <!-- 层级配置详细说明 -->
+            <div style="background: white; border: 1px solid #e8e8e8; border-radius: 4px; padding: 20px; margin-bottom: 15px;">
+                <h4 style="font-size: 14px; font-weight: 500; margin-bottom: 15px; color: rgba(0,0,0,0.85);">⚙ 层级配置</h4>
+
+                <!-- 层级结构说明 -->
+                <div style="margin-bottom: 20px;">
+                    <p style="font-weight: 500; margin-bottom: 10px; color: #722ed1;">📊 层级结构</p>
+                    <div style="background: #fafafa; padding: 15px; border-radius: 4px; font-family: monospace; font-size: 13px; line-height: 1.8;">
+                        🏢 推广中心东总（固定，只有一个）<br>
+                        &nbsp;&nbsp;├─ 👔 总监（可添加多个，名称自定义）<br>
+                        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ 👥 组长（可添加多个，名称自定义）<br>
+                        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└─ 👤 业务员（通过UID标识）<br>
+                        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└─ 👥 组长2 ...<br>
+                        &nbsp;&nbsp;├─ 👔 总监2 ...<br>
+                        &nbsp;&nbsp;└─ 👻 无归属用户（系统固定节点，不可编辑）
+                    </div>
+                </div>
+
+                <!-- 操作说明 -->
+                <div style="margin-bottom: 20px;">
+                    <p style="font-weight: 500; margin-bottom: 10px; color: #722ed1;">🖱️ 操作方式</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                        <tr style="background: #fafafa;">
+                            <th style="border: 1px solid #e8e8e8; padding: 10px; text-align: left; width: 120px;">操作</th>
+                            <th style="border: 1px solid #e8e8e8; padding: 10px; text-align: left;">说明</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">查看下级</td>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">点击左侧树节点，右侧显示该节点的下级列表</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">添加</td>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">选中节点后，点击右侧的「+ 添加XX」按钮</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">编辑</td>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">点击总监/组长列表中的「编辑」按钮修改名称（业务员UID不支持编辑，填错请删除重新添加）</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">删除</td>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">点击「删除」按钮，<span style="color: #ff4d4f;">会同时删除所有下级</span></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">展开/折叠</td>
+                            <td style="border: 1px solid #e8e8e8; padding: 10px;">点击节点前的 ▶/▼ 图标</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- CSV导入说明 -->
+                <div style="margin-bottom: 20px;">
+                    <p style="font-weight: 500; margin-bottom: 10px; color: #722ed1;">📥 CSV批量导入</p>
+                    <p style="font-size: 13px; color: rgba(0,0,0,0.65); margin-bottom: 10px;">
+                        支持通过CSV文件批量导入层级关系，适合一次性导入大量数据。
+                    </p>
+                    <div style="background: #f6ffed; border: 1px solid #b7eb8f; border-radius: 4px; padding: 12px; margin-bottom: 10px;">
+                        <p style="font-size: 13px; margin: 0 0 8px 0;"><b>CSV格式要求（三列）：</b></p>
+                        <code style="display: block; background: #fff; padding: 10px; border-radius: 4px; font-size: 12px; line-height: 1.6;">
+                            总监,组长,业务员UID<br>
+                            总监1,组长1,U10001<br>
+                            总监1,组长1,U10002<br>
+                            总监1,组长2,U10003<br>
+                            总监2,组长1,U10004
+                        </code>
+                    </div>
+                    <ul style="font-size: 13px; color: rgba(0,0,0,0.65); padding-left: 20px; margin: 0;">
+                        <li>点击「📄 下载模板」获取标准格式模板</li>
+                        <li>如果总监/组长不存在，系统会自动创建</li>
+                        <li>已存在的业务员UID会自动跳过</li>
+                        <li>导入前会显示预览，确认后才执行</li>
+                    </ul>
+                </div>
+
+                <!-- 无归属用户说明 -->
+                <div style="margin-bottom: 20px;">
+                    <p style="font-weight: 500; margin-bottom: 10px; color: #722ed1;">👻 无归属用户</p>
+                    <div style="background: #fff7e6; border: 1px solid #ffd591; border-radius: 4px; padding: 12px;">
+                        <p style="font-size: 13px; color: rgba(0,0,0,0.65); margin: 0;">
+                            「无归属用户」是系统固定节点，用于归类没有明确业务员上级的客户。<br>
+                            此节点<b>不可编辑或删除</b>，在数据统计时，这些用户的数据会单独统计显示。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 数据保存说明 -->
+                <div>
+                    <p style="font-weight: 500; margin-bottom: 10px; color: #722ed1;">💾 保存与同步</p>
+                    <ul style="font-size: 13px; color: rgba(0,0,0,0.65); padding-left: 20px; margin: 0;">
+                        <li>点击「💾 保存配置」将数据保存到浏览器本地存储</li>
+                        <li>返回统计页面时，筛选器的「部门组别」会自动更新</li>
+                        <li>注意：本地存储数据仅保存在当前浏览器，清除浏览器数据会丢失配置</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1149,6 +1616,160 @@
 	            { date: '2025-12-02', level1: '推广中心东总', level2: '总监2', level3: '组长1', level4: '业务员3', warning: '', country: '日本', uid: 'U10008', deposit: 65000, withdraw: 24000, netDeposit: 41000, totalDeposit: 300000, profitRatio: '15.5%', spotBalance: 48000, contractBalance: 40000, financeBalance: 29000, spotProfit: 6200, contractProfit: 4700, aiAmount: 20000, aiExperience: 1400, aiRedeemed: 8000, aiProfit: 1800 },
 	            { date: '2025-12-02', level1: '推广中心东总', level2: '总监4', level3: '组长1', level4: '业务员1', warning: '', country: '越南', uid: 'U10011', deposit: 40000, withdraw: 32000, netDeposit: 8000, totalDeposit: 83000, profitRatio: '6.0%', spotBalance: 17000, contractBalance: 13000, financeBalance: 9000, spotProfit: 1700, contractProfit: 1100, aiAmount: 5500, aiExperience: 280, aiRedeemed: 2000, aiProfit: 420 }
 	        ];
+
+        // ========== 层级配置数据 ==========
+        // 默认层级配置数据（与mockData中的层级一致）
+        const defaultHierarchyConfig = {
+            supervisors: [
+                { id: 'sup_1', name: '总监1' },
+                { id: 'sup_2', name: '总监2' },
+                { id: 'sup_3', name: '总监3' },
+                { id: 'sup_4', name: '总监4' }
+            ],
+            groups: [
+                { id: 'grp_1_1', name: '组长1', supervisorId: 'sup_1' },
+                { id: 'grp_1_2', name: '组长2', supervisorId: 'sup_1' },
+                { id: 'grp_1_3', name: '组长3', supervisorId: 'sup_1' },
+                { id: 'grp_2_1', name: '组长1', supervisorId: 'sup_2' },
+                { id: 'grp_2_2', name: '组长2', supervisorId: 'sup_2' },
+                { id: 'grp_3_1', name: '组长1', supervisorId: 'sup_3' },
+                { id: 'grp_4_1', name: '组长1', supervisorId: 'sup_4' }
+            ],
+            staffs: [
+                { id: 'stf_1', uid: 'U10001', groupId: 'grp_1_1' },
+                { id: 'stf_2', uid: 'U10002', groupId: 'grp_1_1' },
+                { id: 'stf_3', uid: 'U10003', groupId: 'grp_1_2' },
+                { id: 'stf_4', uid: 'U10004', groupId: 'grp_1_2' },
+                { id: 'stf_5', uid: 'U10005', groupId: 'grp_1_3' },
+                { id: 'stf_6', uid: 'U10006', groupId: 'grp_2_1' },
+                { id: 'stf_7', uid: 'U10007', groupId: 'grp_2_1' },
+                { id: 'stf_8', uid: 'U10008', groupId: 'grp_2_1' },
+                { id: 'stf_9', uid: 'U10009', groupId: 'grp_3_1' },
+                { id: 'stf_10', uid: 'U10010', groupId: 'grp_3_1' },
+                { id: 'stf_11', uid: 'U10011', groupId: 'grp_4_1' },
+                { id: 'stf_12', uid: 'U10012', groupId: 'grp_4_1' },
+                { id: 'stf_13', uid: 'U10013', groupId: 'grp_1_1' },
+                { id: 'stf_14', uid: 'U10014', groupId: 'grp_1_3' },
+                { id: 'stf_15', uid: 'U10016', groupId: 'grp_1_1' }
+            ]
+        };
+
+        // 层级配置数据（运行时使用）
+        let hierarchyConfig = null;
+
+        // localStorage 键名
+        const HIERARCHY_CONFIG_KEY = 'hierarchyConfig';
+
+        // 加载层级配置
+        function loadHierarchyConfig() {
+            const stored = localStorage.getItem(HIERARCHY_CONFIG_KEY);
+            if (stored) {
+                try {
+                    hierarchyConfig = JSON.parse(stored);
+                } catch (e) {
+                    console.error('加载层级配置失败，使用默认配置', e);
+                    hierarchyConfig = JSON.parse(JSON.stringify(defaultHierarchyConfig));
+                }
+            } else {
+                hierarchyConfig = JSON.parse(JSON.stringify(defaultHierarchyConfig));
+            }
+            return hierarchyConfig;
+        }
+
+        // 保存层级配置
+        function saveHierarchyConfig() {
+            localStorage.setItem(HIERARCHY_CONFIG_KEY, JSON.stringify(hierarchyConfig));
+        }
+
+        // 生成唯一ID
+        function generateId(prefix) {
+            return prefix + '_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        // 获取总监下的组长列表
+        function getGroupsBySupervisor(supervisorId) {
+            return hierarchyConfig.groups.filter(g => g.supervisorId === supervisorId);
+        }
+
+        // 获取组长下的业务员列表
+        function getStaffsByGroup(groupId) {
+            return hierarchyConfig.staffs.filter(s => s.groupId === groupId);
+        }
+
+        // 获取总监下的所有业务员数量
+        function getStaffCountBySupervisor(supervisorId) {
+            const groups = getGroupsBySupervisor(supervisorId);
+            let count = 0;
+            groups.forEach(g => {
+                count += getStaffsByGroup(g.id).length;
+            });
+            return count;
+        }
+
+        // 添加总监
+        function addSupervisor(name) {
+            const id = generateId('sup');
+            hierarchyConfig.supervisors.push({ id, name });
+            return id;
+        }
+
+        // 编辑总监
+        function editSupervisor(id, name) {
+            const sup = hierarchyConfig.supervisors.find(s => s.id === id);
+            if (sup) sup.name = name;
+        }
+
+        // 删除总监（级联删除组长和业务员）
+        function deleteSupervisor(id) {
+            const groups = getGroupsBySupervisor(id);
+            groups.forEach(g => {
+                hierarchyConfig.staffs = hierarchyConfig.staffs.filter(s => s.groupId !== g.id);
+            });
+            hierarchyConfig.groups = hierarchyConfig.groups.filter(g => g.supervisorId !== id);
+            hierarchyConfig.supervisors = hierarchyConfig.supervisors.filter(s => s.id !== id);
+        }
+
+        // 添加组长
+        function addGroup(name, supervisorId) {
+            const id = generateId('grp');
+            hierarchyConfig.groups.push({ id, name, supervisorId });
+            return id;
+        }
+
+        // 编辑组长
+        function editGroup(id, name) {
+            const grp = hierarchyConfig.groups.find(g => g.id === id);
+            if (grp) grp.name = name;
+        }
+
+        // 删除组长（级联删除业务员）
+        function deleteGroup(id) {
+            hierarchyConfig.staffs = hierarchyConfig.staffs.filter(s => s.groupId !== id);
+            hierarchyConfig.groups = hierarchyConfig.groups.filter(g => g.id !== id);
+        }
+
+        // 添加业务员
+        function addStaff(uid, groupId) {
+            const id = generateId('stf');
+            hierarchyConfig.staffs.push({ id, uid, groupId });
+            return id;
+        }
+
+        // 编辑业务员
+        function editStaff(id, uid) {
+            const stf = hierarchyConfig.staffs.find(s => s.id === id);
+            if (stf) stf.uid = uid;
+        }
+
+        // 删除业务员
+        function deleteStaff(id) {
+            hierarchyConfig.staffs = hierarchyConfig.staffs.filter(s => s.id !== id);
+        }
+
+        // 检查业务员UID是否已存在
+        function isStaffUidExists(uid, excludeId = null) {
+            return hierarchyConfig.staffs.some(s => s.uid === uid && s.id !== excludeId);
+        }
 
         // ========== 表格渲染函数 ==========
         function renderTable(data, timeStatMode = 'single', isChainMode = true, reportType = 'daily') {
@@ -2153,7 +2774,817 @@
             document.getElementById('displayModeChain').addEventListener('change', function() {
                 filterData(); // 自动刷新
             });
+
+            // ========== 层级配置功能初始化 ==========
+            loadHierarchyConfig();
+            initHierarchyConfig();
         });
+
+        // ========== 层级配置视图相关 ==========
+        let currentView = 'stats'; // 'stats' 或 'config'
+        let selectedTreeNode = null; // 当前选中的树节点
+
+        // 切换到配置视图
+        function switchToConfigView() {
+            currentView = 'config';
+            document.getElementById('filterSection').style.display = 'none';
+            document.getElementById('statsTableContainer').style.display = 'none';
+            document.getElementById('hierarchyConfigContainer').style.display = 'block';
+            document.getElementById('pageTitle').textContent = '层级配置';
+            document.getElementById('btnBackToStats').style.display = 'inline-block';
+
+            renderHierarchyTree();
+            resetConfigPanel();
+        }
+
+        // 切换回统计视图
+        function switchToStatsView() {
+            currentView = 'stats';
+            document.getElementById('filterSection').style.display = 'block';
+            document.getElementById('statsTableContainer').style.display = 'block';
+            document.getElementById('hierarchyConfigContainer').style.display = 'none';
+            document.getElementById('pageTitle').textContent = '平台层级关系数据统计';
+            document.getElementById('btnBackToStats').style.display = 'none';
+
+            // 同步更新筛选器的cascadeData
+            syncCascadeData();
+        }
+
+        // 初始化层级配置
+        function initHierarchyConfig() {
+            // 层级配置按钮点击事件
+            document.getElementById('btnHierarchyConfig').addEventListener('click', switchToConfigView);
+
+            // 返回按钮点击事件
+            document.getElementById('btnBackToStats').addEventListener('click', switchToStatsView);
+
+            // 下载模板按钮
+            document.getElementById('btnDownloadTemplate').addEventListener('click', downloadCsvTemplate);
+
+            // CSV导入按钮
+            document.getElementById('btnCsvImport').addEventListener('click', function() {
+                document.getElementById('csvFileInput').click();
+            });
+
+            // CSV文件选择
+            document.getElementById('csvFileInput').addEventListener('change', handleCsvImport);
+
+            // 保存配置按钮
+            document.getElementById('btnSaveConfig').addEventListener('click', function() {
+                saveHierarchyConfig();
+                alert('配置已保存！');
+            });
+        }
+
+        // 渲染层级树
+        function renderHierarchyTree() {
+            const container = document.getElementById('hierarchyTree');
+            let html = '';
+
+            // 东总节点（根节点）
+            html += `
+                <div class="tree-node tree-level-1" data-type="root" data-id="root">
+                    <div class="tree-node-content" onclick="selectTreeNode('root', 'root')">
+                        <span class="tree-expand" onclick="event.stopPropagation(); toggleTreeNode(this)">▼</span>
+                        <span class="tree-icon">🏢</span>
+                        <span class="tree-label">推广中心东总</span>
+                        <span class="tree-count">(${hierarchyConfig.supervisors.length}个总监)</span>
+                    </div>
+                    <div class="tree-children expanded">
+            `;
+
+            // 总监节点
+            hierarchyConfig.supervisors.forEach(sup => {
+                const groups = getGroupsBySupervisor(sup.id);
+                const staffCount = getStaffCountBySupervisor(sup.id);
+                html += `
+                    <div class="tree-node tree-level-2" data-type="supervisor" data-id="${sup.id}">
+                        <div class="tree-node-content" onclick="selectTreeNode('${sup.id}', 'supervisor')">
+                            <span class="tree-expand" onclick="event.stopPropagation(); toggleTreeNode(this)">▶</span>
+                            <span class="tree-icon">👔</span>
+                            <span class="tree-label">${sup.name}</span>
+                            <span class="tree-count">(${groups.length}组/${staffCount}人)</span>
+                        </div>
+                        <div class="tree-children">
+                `;
+
+                // 组长节点
+                groups.forEach(grp => {
+                    const staffs = getStaffsByGroup(grp.id);
+                    html += `
+                        <div class="tree-node tree-level-3" data-type="group" data-id="${grp.id}">
+                            <div class="tree-node-content" onclick="selectTreeNode('${grp.id}', 'group')">
+                                <span class="tree-expand" onclick="event.stopPropagation(); toggleTreeNode(this)">▶</span>
+                                <span class="tree-icon">👥</span>
+                                <span class="tree-label">${grp.name}</span>
+                                <span class="tree-count">(${staffs.length}人)</span>
+                            </div>
+                            <div class="tree-children">
+                    `;
+
+                    // 业务员节点
+                    staffs.forEach(stf => {
+                        html += `
+                            <div class="tree-node tree-level-4" data-type="staff" data-id="${stf.id}">
+                                <div class="tree-node-content" onclick="selectTreeNode('${stf.id}', 'staff')">
+                                    <span class="tree-expand" style="visibility: hidden;">▶</span>
+                                    <span class="tree-icon">👤</span>
+                                    <span class="tree-label">${stf.uid}</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    html += `
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            // 无归属用户节点（固定节点）
+            html += `
+                    <div class="tree-node tree-level-2" data-type="unassigned" data-id="unassigned">
+                        <div class="tree-node-content fixed" onclick="selectTreeNode('unassigned', 'unassigned')">
+                            <span class="tree-expand" style="visibility: hidden;">▶</span>
+                            <span class="tree-icon">👻</span>
+                            <span class="tree-label">无归属用户</span>
+                            <span class="tree-count">(系统固定)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        // 展开/折叠树节点
+        function toggleTreeNode(expandIcon) {
+            const nodeContent = expandIcon.parentElement;
+            const children = nodeContent.nextElementSibling;
+            if (children && children.classList.contains('tree-children')) {
+                const isExpanded = children.classList.contains('expanded');
+                if (isExpanded) {
+                    children.classList.remove('expanded');
+                    expandIcon.textContent = '▶';
+                } else {
+                    children.classList.add('expanded');
+                    expandIcon.textContent = '▼';
+                }
+            }
+        }
+
+        // 选中树节点
+        function selectTreeNode(id, type) {
+            // 移除之前的选中状态
+            document.querySelectorAll('.tree-node-content.selected').forEach(el => {
+                el.classList.remove('selected');
+            });
+
+            // 添加当前选中状态
+            const node = document.querySelector(`.tree-node[data-id="${id}"] > .tree-node-content`);
+            if (node) {
+                node.classList.add('selected');
+            }
+
+            selectedTreeNode = { id, type };
+            renderConfigPanel(id, type);
+        }
+
+        // 重置配置面板
+        function resetConfigPanel() {
+            selectedTreeNode = null;
+            document.getElementById('configPanelHeader').innerHTML = '<span>请选择左侧节点</span>';
+            document.getElementById('configPanelBody').innerHTML = `
+                <div class="config-empty-state">
+                    <div class="empty-icon">👈</div>
+                    <p>请点击左侧树节点，查看和管理其下级成员</p>
+                </div>
+            `;
+        }
+
+        // 渲染配置面板
+        function renderConfigPanel(id, type) {
+            const header = document.getElementById('configPanelHeader');
+            const body = document.getElementById('configPanelBody');
+
+            if (type === 'root') {
+                // 东总 - 显示总监列表
+                header.innerHTML = `
+                    <span>👔 总监管理</span>
+                    <button class="btn btn-primary" onclick="showAddModal('supervisor')">+ 添加总监</button>
+                `;
+
+                let tableHtml = `
+                    <table class="config-table">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>总监名称</th>
+                                <th>下属组长</th>
+                                <th>下属业务员</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                hierarchyConfig.supervisors.forEach((sup, index) => {
+                    const groups = getGroupsBySupervisor(sup.id);
+                    const staffCount = getStaffCountBySupervisor(sup.id);
+                    tableHtml += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${sup.name}</td>
+                            <td>${groups.length} 个</td>
+                            <td>${staffCount} 人</td>
+                            <td class="action-btns">
+                                <button class="action-btn" onclick="showEditModal('supervisor', '${sup.id}', '${sup.name}')">编辑</button>
+                                <button class="action-btn danger" onclick="confirmDelete('supervisor', '${sup.id}', '${sup.name}')">删除</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                if (hierarchyConfig.supervisors.length === 0) {
+                    tableHtml += '<tr><td colspan="5" style="text-align: center; color: #999;">暂无总监，请添加</td></tr>';
+                }
+
+                tableHtml += '</tbody></table>';
+                body.innerHTML = tableHtml;
+
+            } else if (type === 'supervisor') {
+                // 总监 - 显示组长列表
+                const sup = hierarchyConfig.supervisors.find(s => s.id === id);
+                const groups = getGroupsBySupervisor(id);
+
+                header.innerHTML = `
+                    <span>👥 ${sup.name} - 组长管理</span>
+                    <button class="btn btn-primary" onclick="showAddModal('group', '${id}')">+ 添加组长</button>
+                `;
+
+                let tableHtml = `
+                    <table class="config-table">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>组长名称</th>
+                                <th>下属业务员</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                groups.forEach((grp, index) => {
+                    const staffs = getStaffsByGroup(grp.id);
+                    tableHtml += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${grp.name}</td>
+                            <td>${staffs.length} 人</td>
+                            <td class="action-btns">
+                                <button class="action-btn" onclick="showEditModal('group', '${grp.id}', '${grp.name}')">编辑</button>
+                                <button class="action-btn danger" onclick="confirmDelete('group', '${grp.id}', '${grp.name}')">删除</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                if (groups.length === 0) {
+                    tableHtml += '<tr><td colspan="4" style="text-align: center; color: #999;">暂无组长，请添加</td></tr>';
+                }
+
+                tableHtml += '</tbody></table>';
+                body.innerHTML = tableHtml;
+
+            } else if (type === 'group') {
+                // 组长 - 显示业务员列表
+                const grp = hierarchyConfig.groups.find(g => g.id === id);
+                const staffs = getStaffsByGroup(id);
+
+                header.innerHTML = `
+                    <span>👤 ${grp.name} - 业务员管理</span>
+                    <button class="btn btn-primary" onclick="showAddModal('staff', '${id}')">+ 添加业务员</button>
+                `;
+
+                let tableHtml = `
+                    <table class="config-table">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>业务员UID</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                staffs.forEach((stf, index) => {
+                    tableHtml += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${stf.uid}</td>
+                            <td class="action-btns">
+                                <button class="action-btn danger" onclick="confirmDelete('staff', '${stf.id}', '${stf.uid}')">删除</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                if (staffs.length === 0) {
+                    tableHtml += '<tr><td colspan="3" style="text-align: center; color: #999;">暂无业务员，请添加</td></tr>';
+                }
+
+                tableHtml += '</tbody></table>';
+                body.innerHTML = tableHtml;
+
+            } else if (type === 'staff') {
+                // 业务员 - 显示详情
+                const stf = hierarchyConfig.staffs.find(s => s.id === id);
+                const grp = hierarchyConfig.groups.find(g => g.id === stf.groupId);
+                const sup = hierarchyConfig.supervisors.find(s => s.id === grp.supervisorId);
+
+                header.innerHTML = '<span>👤 业务员详情</span>';
+                body.innerHTML = `
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: inline-block; width: 100px; color: #666;">业务员UID：</label>
+                            <span style="font-weight: 500;">${stf.uid}</span>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: inline-block; width: 100px; color: #666;">所属组长：</label>
+                            <span>${grp.name}</span>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: inline-block; width: 100px; color: #666;">所属总监：</label>
+                            <span>${sup.name}</span>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <button class="btn btn-default" style="color: #ff4d4f; border-color: #ff4d4f;" onclick="confirmDelete('staff', '${stf.id}', '${stf.uid}')">删除</button>
+                        </div>
+                    </div>
+                `;
+
+            } else if (type === 'unassigned') {
+                // 无归属用户
+                header.innerHTML = '<span>👻 无归属用户</span>';
+                body.innerHTML = `
+                    <div class="unassigned-info">
+                        <div class="info-icon">👻</div>
+                        <div class="info-title">无归属用户</div>
+                        <div class="info-desc">
+                            这是一个系统固定节点，用于归类那些没有明确业务员上级的客户。<br><br>
+                            此节点不可编辑或删除，在数据统计时，这些用户的数据会单独统计。
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // ========== 弹窗相关 ==========
+        let currentModalAction = null; // { action: 'add'|'edit', type, id, parentId }
+
+        // 显示添加弹窗
+        function showAddModal(type, parentId = null) {
+            currentModalAction = { action: 'add', type, parentId };
+
+            let title = '';
+            let placeholder = '';
+            let label = '';
+
+            if (type === 'supervisor') {
+                title = '添加总监';
+                label = '总监名称';
+                placeholder = '请输入总监名称，如：总监5';
+            } else if (type === 'group') {
+                title = '添加组长';
+                label = '组长名称';
+                placeholder = '请输入组长名称，如：组长1';
+            } else if (type === 'staff') {
+                title = '添加业务员';
+                label = '业务员UID';
+                placeholder = '请输入业务员UID，如：U10020';
+            }
+
+            showModal(title, label, placeholder, '');
+        }
+
+        // 显示编辑弹窗
+        function showEditModal(type, id, currentValue) {
+            currentModalAction = { action: 'edit', type, id };
+
+            let title = '';
+            let label = '';
+            let placeholder = '';
+
+            if (type === 'supervisor') {
+                title = '编辑总监';
+                label = '总监名称';
+                placeholder = '请输入总监名称';
+            } else if (type === 'group') {
+                title = '编辑组长';
+                label = '组长名称';
+                placeholder = '请输入组长名称';
+            } else if (type === 'staff') {
+                title = '编辑业务员';
+                label = '业务员UID';
+                placeholder = '请输入业务员UID';
+            }
+
+            showModal(title, label, placeholder, currentValue);
+        }
+
+        // 显示弹窗
+        function showModal(title, label, placeholder, value) {
+            const modalHtml = `
+                <div class="modal-overlay" id="configModal" onclick="if(event.target===this) closeModal()">
+                    <div class="modal-container">
+                        <div class="modal-header">${title}</div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="form-label">${label}</label>
+                                <input type="text" class="form-input" id="modalInput" placeholder="${placeholder}" value="${value}">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" onclick="closeModal()">取消</button>
+                            <button class="btn btn-primary" onclick="submitModal()">确定</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            document.getElementById('modalInput').focus();
+
+            // 回车提交
+            document.getElementById('modalInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') submitModal();
+            });
+        }
+
+        // 关闭弹窗
+        function closeModal() {
+            const modal = document.getElementById('configModal');
+            if (modal) modal.remove();
+            currentModalAction = null;
+        }
+
+        // 提交弹窗
+        function submitModal() {
+            const input = document.getElementById('modalInput');
+            const value = input.value.trim();
+
+            if (!value) {
+                alert('请输入内容');
+                input.focus();
+                return;
+            }
+
+            const { action, type, id, parentId } = currentModalAction;
+
+            if (action === 'add') {
+                if (type === 'supervisor') {
+                    addSupervisor(value);
+                } else if (type === 'group') {
+                    addGroup(value, parentId);
+                } else if (type === 'staff') {
+                    if (isStaffUidExists(value)) {
+                        alert('该UID已存在，请使用其他UID');
+                        input.focus();
+                        return;
+                    }
+                    addStaff(value, parentId);
+                }
+            } else if (action === 'edit') {
+                if (type === 'supervisor') {
+                    editSupervisor(id, value);
+                } else if (type === 'group') {
+                    editGroup(id, value);
+                } else if (type === 'staff') {
+                    if (isStaffUidExists(value, id)) {
+                        alert('该UID已存在，请使用其他UID');
+                        input.focus();
+                        return;
+                    }
+                    editStaff(id, value);
+                }
+            }
+
+            closeModal();
+            renderHierarchyTree();
+
+            // 重新选中之前的节点
+            if (selectedTreeNode) {
+                setTimeout(() => {
+                    selectTreeNode(selectedTreeNode.id, selectedTreeNode.type);
+                }, 0);
+            }
+        }
+
+        // 确认删除
+        function confirmDelete(type, id, name) {
+            let message = '';
+            let childCount = 0;
+
+            if (type === 'supervisor') {
+                const groups = getGroupsBySupervisor(id);
+                const staffCount = getStaffCountBySupervisor(id);
+                if (groups.length > 0 || staffCount > 0) {
+                    message = `确定要删除总监「${name}」吗？\n\n⚠️ 将同时删除其下属的 ${groups.length} 个组长和 ${staffCount} 个业务员！`;
+                } else {
+                    message = `确定要删除总监「${name}」吗？`;
+                }
+            } else if (type === 'group') {
+                const staffs = getStaffsByGroup(id);
+                if (staffs.length > 0) {
+                    message = `确定要删除组长「${name}」吗？\n\n⚠️ 将同时删除其下属的 ${staffs.length} 个业务员！`;
+                } else {
+                    message = `确定要删除组长「${name}」吗？`;
+                }
+            } else if (type === 'staff') {
+                message = `确定要删除业务员「${name}」吗？`;
+            }
+
+            if (confirm(message)) {
+                if (type === 'supervisor') {
+                    deleteSupervisor(id);
+                } else if (type === 'group') {
+                    deleteGroup(id);
+                } else if (type === 'staff') {
+                    deleteStaff(id);
+                }
+
+                renderHierarchyTree();
+
+                // 删除后选中父节点或重置
+                if (type === 'staff' && selectedTreeNode) {
+                    const stf = hierarchyConfig.staffs.find(s => s.id === id);
+                    // 已删除，选中其所属组长
+                    // 由于已删除，需要从之前的节点信息获取
+                } else if (type === 'group' && selectedTreeNode) {
+                    selectTreeNode('root', 'root');
+                } else if (type === 'supervisor') {
+                    selectTreeNode('root', 'root');
+                } else {
+                    resetConfigPanel();
+                }
+            }
+        }
+
+        // ========== CSV导入相关 ==========
+        // 下载CSV模板
+        function downloadCsvTemplate() {
+            const templateContent = `总监,组长,业务员UID
+总监1,组长1,U20001
+总监1,组长1,U20002
+总监1,组长2,U20003
+总监2,组长1,U20004
+总监2,组长1,U20005`;
+
+            const blob = new Blob(['\ufeff' + templateContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', '层级配置导入模板.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function handleCsvImport(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const csvContent = event.target.result;
+                parseCsvAndShowPreview(csvContent);
+            };
+            reader.readAsText(file);
+
+            // 清空input，允许重复选择同一文件
+            e.target.value = '';
+        }
+
+        function parseCsvAndShowPreview(csvContent) {
+            const lines = csvContent.split('\n').map(line => line.trim()).filter(line => line);
+            if (lines.length < 2) {
+                alert('CSV文件格式错误：至少需要标题行和一行数据');
+                return;
+            }
+
+            // 解析标题行
+            const headers = lines[0].split(',').map(h => h.trim());
+            if (headers.length < 3 || !headers[0].includes('总监') || !headers[1].includes('组长') || !headers[2].includes('业务员')) {
+                alert('CSV文件格式错误：需要包含"总监,组长,业务员UID"三列');
+                return;
+            }
+
+            // 解析数据行
+            const importData = [];
+            for (let i = 1; i < lines.length; i++) {
+                const cols = lines[i].split(',').map(c => c.trim());
+                if (cols.length >= 3 && cols[0] && cols[1] && cols[2]) {
+                    importData.push({
+                        supervisor: cols[0],
+                        group: cols[1],
+                        staffUid: cols[2]
+                    });
+                }
+            }
+
+            if (importData.length === 0) {
+                alert('CSV文件中没有有效数据');
+                return;
+            }
+
+            // 显示预览弹窗
+            showCsvPreviewModal(importData);
+        }
+
+        function showCsvPreviewModal(importData) {
+            // 分析数据
+            const newSupervisors = new Set();
+            const newGroups = new Set();
+            const newStaffs = [];
+            const existsStaffs = [];
+
+            importData.forEach(item => {
+                // 检查总监
+                if (!hierarchyConfig.supervisors.find(s => s.name === item.supervisor)) {
+                    newSupervisors.add(item.supervisor);
+                }
+                // 检查组长（需要考虑同名组长在不同总监下的情况）
+                const supId = hierarchyConfig.supervisors.find(s => s.name === item.supervisor)?.id || `new_${item.supervisor}`;
+                const groupKey = `${item.supervisor}|${item.group}`;
+                if (!hierarchyConfig.groups.find(g => g.name === item.group &&
+                    hierarchyConfig.supervisors.find(s => s.id === g.supervisorId)?.name === item.supervisor)) {
+                    newGroups.add(groupKey);
+                }
+                // 检查业务员
+                if (isStaffUidExists(item.staffUid)) {
+                    existsStaffs.push(item.staffUid);
+                } else {
+                    newStaffs.push(item.staffUid);
+                }
+            });
+
+            const modalHtml = `
+                <div class="modal-overlay" id="csvPreviewModal" onclick="if(event.target===this) closeCsvPreviewModal()">
+                    <div class="modal-container" style="width: 600px;">
+                        <div class="modal-header">CSV导入预览</div>
+                        <div class="modal-body">
+                            <p style="margin-bottom: 15px;">即将导入 <b>${importData.length}</b> 条数据：</p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px; color: #666;">
+                                <li>新增总监：<b style="color: #52c41a;">${newSupervisors.size}</b> 个</li>
+                                <li>新增组长：<b style="color: #52c41a;">${newGroups.size}</b> 个</li>
+                                <li>新增业务员：<b style="color: #52c41a;">${newStaffs.length}</b> 个</li>
+                                ${existsStaffs.length > 0 ? `<li style="color: #fa8c16;">已存在业务员（将跳过）：<b>${existsStaffs.length}</b> 个</li>` : ''}
+                            </ul>
+                            <div class="csv-preview">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>总监</th>
+                                            <th>组长</th>
+                                            <th>业务员UID</th>
+                                            <th>状态</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${importData.map(item => {
+                                            const isNew = !isStaffUidExists(item.staffUid);
+                                            return `
+                                                <tr class="${isNew ? 'row-new' : 'row-exists'}">
+                                                    <td>${item.supervisor}</td>
+                                                    <td>${item.group}</td>
+                                                    <td>${item.staffUid}</td>
+                                                    <td>${isNew ? '<span style="color: #52c41a;">新增</span>' : '<span style="color: #fa8c16;">已存在</span>'}</td>
+                                                </tr>
+                                            `;
+                                        }).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" onclick="closeCsvPreviewModal()">取消</button>
+                            <button class="btn btn-primary" onclick="confirmCsvImport()">确认导入</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // 保存导入数据供确认时使用
+            window.pendingCsvImport = importData;
+
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+
+        function closeCsvPreviewModal() {
+            const modal = document.getElementById('csvPreviewModal');
+            if (modal) modal.remove();
+            window.pendingCsvImport = null;
+        }
+
+        function confirmCsvImport() {
+            const importData = window.pendingCsvImport;
+            if (!importData) return;
+
+            // 执行导入
+            importData.forEach(item => {
+                // 查找或创建总监
+                let sup = hierarchyConfig.supervisors.find(s => s.name === item.supervisor);
+                if (!sup) {
+                    const supId = addSupervisor(item.supervisor);
+                    sup = { id: supId, name: item.supervisor };
+                }
+
+                // 查找或创建组长
+                let grp = hierarchyConfig.groups.find(g => g.name === item.group && g.supervisorId === sup.id);
+                if (!grp) {
+                    const grpId = addGroup(item.group, sup.id);
+                    grp = { id: grpId, name: item.group, supervisorId: sup.id };
+                }
+
+                // 添加业务员（跳过已存在的）
+                if (!isStaffUidExists(item.staffUid)) {
+                    addStaff(item.staffUid, grp.id);
+                }
+            });
+
+            closeCsvPreviewModal();
+            renderHierarchyTree();
+            resetConfigPanel();
+
+            alert('导入成功！');
+        }
+
+        // ========== 同步数据到筛选器 ==========
+        function syncCascadeData() {
+            // 重新构建 cascadeData
+            const newCascadeData = {
+                id: 'root',
+                name: '推广中心东总',
+                children: []
+            };
+
+            // 添加总监节点
+            hierarchyConfig.supervisors.forEach(sup => {
+                const supNode = {
+                    id: sup.id,
+                    name: sup.name,
+                    children: []
+                };
+
+                // 添加组长节点
+                const groups = getGroupsBySupervisor(sup.id);
+                groups.forEach(grp => {
+                    const grpNode = {
+                        id: grp.id,
+                        name: grp.name,
+                        children: []
+                    };
+
+                    // 添加业务员节点
+                    const staffs = getStaffsByGroup(grp.id);
+                    staffs.forEach(stf => {
+                        grpNode.children.push({
+                            id: stf.id,
+                            name: stf.uid
+                        });
+                    });
+
+                    supNode.children.push(grpNode);
+                });
+
+                newCascadeData.children.push(supNode);
+            });
+
+            // 添加无归属用户节点
+            newCascadeData.children.push({
+                id: 'unassigned',
+                name: '无归属用户',
+                isFixed: true
+            });
+
+            // 更新全局 cascadeData
+            window.cascadeData = newCascadeData;
+
+            // 刷新筛选器显示
+            if (typeof initCascadeSelector === 'function') {
+                initCascadeSelector();
+            }
+        }
 
         function toggleMenu(element) {
             // 切换一级菜单的展开状态
