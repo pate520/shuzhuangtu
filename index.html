@@ -705,7 +705,9 @@
                 <!-- 交互说明 -->
                 <div style="background: #e6f7ff; border-left: 4px solid #1890ff; padding: 12px 15px; margin-top: 15px; border-radius: 4px;">
                     <p style="font-size: 14px; color: rgba(0,0,0,0.85); line-height: 1.8; margin: 0;">
-                        <b style="color: #1890ff;">💡 交互说明：</b>所有筛选项调整后，需<b>点击「查询」按钮</b>才会刷新表格数据。这样设计便于用户一次性调整多个筛选条件后统一查询，减少不必要的请求，同时也能减少开发时间。
+                        <b style="color: #1890ff;">💡 交互说明：</b><br>
+                        • 大部分筛选项变更后<b>自动刷新</b>表格数据（报表类型、快捷日期按钮、代理链、时间统计方式）<br>
+                        • 部门组别：因支持多选，需点击「查询」按钮后刷新
                     </p>
                 </div>
 
@@ -717,9 +719,9 @@
                 </div>
 
                 <!-- 分页功能说明 -->
-                <div style="background: #fff7e6; border-left: 4px solid #fa8c16; padding: 12px 15px; margin-top: 10px; border-radius: 4px;">
+                <div style="background: #f6ffed; border-left: 4px solid #52c41a; padding: 12px 15px; margin-top: 10px; border-radius: 4px;">
                     <p style="font-size: 14px; color: rgba(0,0,0,0.85); line-height: 1.8; margin: 0;">
-                        <b style="color: #fa8c16;">📄 分页功能：</b><span style="color: #fa8c16;">【待确认】</span> 
+                        <b style="color: #52c41a;">📄 分页功能：</b>参考【平台数据看板】的分页组件。
                     </p>
                 </div>
             </div>
@@ -1592,10 +1594,11 @@
             const dailyQuickBtns = document.getElementById('dailyQuickBtns');
             const monthlyQuickBtns = document.getElementById('monthlyQuickBtns');
 
-            // 监听报表类型变化
+            // 监听报表类型变化 - 自动刷新
             reportTypeRadios.forEach(radio => {
                 radio.addEventListener('change', function() {
                     updateDateFields(this.value);
+                    filterData(); // 自动刷新
                 });
             });
 
@@ -1772,6 +1775,7 @@
 
                     startDateInput.value = formatDate(start);
 	                    endDateInput.value = formatDate(end);
+                    filterData(); // 自动刷新
                 });
             });
 
@@ -1801,11 +1805,16 @@
 
                     startMonthInput.value = formatMonth(startMonth);
 	                    endMonthInput.value = formatMonth(endMonth);
+                    filterData(); // 自动刷新
                 });
             });
 
-	            // ========== 日期 / 时间统计方式变更 ==========
-	            // 不再自动触发筛选，用户调整好条件后，通过点击「查询」统一执行 filterData()
+            // ========== 时间统计方式变更 - 自动刷新 ==========
+            document.querySelectorAll('input[name="timeStatMode"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    filterData(); // 自动刷新
+                });
+            });
 
             // ========== 操作按钮事件 ==========
             // 查询按钮
@@ -2140,10 +2149,9 @@
             renderTable([], 'single', true);
             updateTableColumns(true);
 
-            // 监听代理链 checkbox 变化，不自动触发筛选
+            // 监听代理链 checkbox 变化 - 自动刷新
             document.getElementById('displayModeChain').addEventListener('change', function() {
-                // 只更新列的显示/隐藏，不触发数据筛选
-                // 用户需要点击【查询】才会重新筛选数据
+                filterData(); // 自动刷新
             });
         });
 
