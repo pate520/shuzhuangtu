@@ -867,32 +867,35 @@
         <div class="content-body" id="statsTableContainer">
             <div class="table-container">
                 <table>
-                    <thead>
-                        <tr>
-                            <th>日期</th>
-                            <th>一级<br>东总</th>
-                            <th>二级<br>总监</th>
-                            <th>三级<br>（组长）</th>
-                            <th>四级<br>（业务员）</th>
-                            <th class="chain-only-column">异常提示</th>
-                            <th class="chain-only-column">国家（业务员旗下的用户注册归属地）</th>
-                            <th class="chain-only-column">用户uid</th>
-                            <th class="sortable" data-field="deposit">充值<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="withdraw">提币<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="netDeposit">净充值<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="totalDeposit">总充值<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="profitRatio">盈利比例<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="spotBalance">现货余额<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="contractBalance">合约余额<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="financeBalance">理财余额（不含体验金<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="spotProfit">现货已实现盈利<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="contractProfit">合约已实现盈利<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="aiAmount">AI理财包当前参与金额（不含体验金）<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="aiExperience">AI理财包体验金（收益中）<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="aiRedeemed">AI理财包已赎回<span class="sort-indicator"></span></th>
-                            <th class="sortable" data-field="aiProfit">AI理财包收益<span class="sort-indicator"></span></th>
-                        </tr>
-                    </thead>
+		                    <thead>
+		                        <tr>
+		                            <th>日期</th>
+		                            <th>一级<br>东总</th>
+		                            <th>二级<br>总监</th>
+		                            <th>三级<br>（组长）</th>
+		                            <th>四级<br>（业务员）</th>
+		                            <th class="chain-only-column">异常提示</th>
+		                            <th class="chain-only-column">国家（业务员旗下的用户注册归属地）</th>
+		                            <th class="chain-only-column">用户uid</th>
+		                            <th class="sortable" data-field="withdraw">提币<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="netDeposit">净充值<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="totalDeposit">总充值<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="profitRatio">盈利比例<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="spotBalance">现货余额<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="contractBalance">合约余额<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="financeBalance">理财余额（不含体验金<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="spotProfit">现货已实现盈利<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="contractProfit">合约已实现盈利<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="aiAmount">AI理财包当前参与金额（不含体验金）<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="aiExperience">AI理财包体验金（收益中）<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="aiRedeemed">AI理财包已赎回<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="aiProfit">AI理财包收益<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="activityReward">活动奖励<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="aiCopyRebate">AI COPY返佣<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="contractRebate">合约返佣<span class="sort-indicator"></span></th>
+		                            <th class="sortable" data-field="spotRebate">现货返佣<span class="sort-indicator"></span></th>
+		                        </tr>
+		                    </thead>
                     <tbody>
                         <!-- 数据行将在这里显示 -->
                     </tbody>
@@ -942,16 +945,19 @@
             </div>
         </div>
 
-        <!-- 需求文档 -->
-        <div class="content-body" style="margin-top: 20px;">
-            <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 15px; color: rgba(0,0,0,0.85);">📋 需求文档</h3>
+	        <!-- 需求文档 -->
+	        <div class="content-body" style="margin-top: 20px;">
+	            <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 6px; color: rgba(0,0,0,0.85);">📋 需求文档</h3>
+	            <p style="font-size: 12px; color: #999; margin: 0 0 12px 0;">
+	                <b>2025-12-05 补充：</b>去掉“充值”字段，新增“活动奖励、AI COPY返佣、合约返佣、现货返佣”四个字段。
+	            </p>
 
-            <!-- 需求背景说明 -->
+	            <!-- 需求背景说明 -->
             <div style="margin-bottom: 25px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);">
                 <h4 style="font-size: 14px; font-weight: 500; margin-bottom: 10px; color: #fff;">💡 需求背景</h4>
-                <p style="font-size: 14px; color: rgba(255,255,255,0.95); line-height: 1.8; margin: 0;">
-                    本报表的核心目标是：<b>基于市场的邀请关系层级（东总 → 总监 → 组长 → 业务员 → 客户），结合时间维度，对现有的业务数据字段进行多维度筛选和展示</b>。<br>
-                    所有统计字段（充值、提币、余额、盈利等）均来自现有的平台数据看板，本报表的价值在于：<br>
+	                <p style="font-size: 14px; color: rgba(255,255,255,0.95); line-height: 1.8; margin: 0;">
+	                    本报表的核心目标是：<b>基于市场的邀请关系层级（东总 → 总监 → 组长 → 业务员 → 客户），结合时间维度，对现有的业务数据字段进行多维度筛选和展示</b>。<br>
+	                    所有统计字段（提币、余额、盈利等）均来自现有的平台数据看板，本报表的价值在于：<br>
                     <b>1. 层级化管理</b>：按照市场邀请关系的四级结构，清晰展示每个层级的业绩归属；<br>
                     <b>2. 灵活筛选</b>：支持按时间、部门、显示方式等多维度组合筛选，满足不同决策场景；<br>
                     <b>3. 业务&财务双管理</b>：既可以看业务员/客户的业绩表现（业务管理），也可以看资金流水和盈利情况（财务管理）。
@@ -981,11 +987,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td style="border: 1px solid #e8e8e8; padding: 8px; font-weight: 500;">数值字段<br><span style="font-weight: normal; font-size: 12px; color: #999;">充值、提币、净充值、总充值、各类余额、各类盈利、AI理财包相关（共13个）</span></td>
-                                <td style="border: 1px solid #e8e8e8; padding: 8px; text-align: center; color: rgba(0,0,0,0.65);">直接展示原值</td>
-                                <td style="border: 1px solid #e8e8e8; padding: 8px; text-align: center; color: rgba(0,0,0,0.65);"><b style="color: #52c41a;">累加求和</b></td>
-                            </tr>
+	                            <tr>
+	                                <td style="border: 1px solid #e8e8e8; padding: 8px; font-weight: 500;">数值字段<br><span style="font-weight: normal; font-size: 12px; color: #999;">提币、净充值、总充值、各类余额、各类盈利、AI理财包相关、活动奖励及各类返佣</span></td>
+	                                <td style="border: 1px solid #e8e8e8; padding: 8px; text-align: center; color: rgba(0,0,0,0.65);">直接展示原值</td>
+	                                <td style="border: 1px solid #e8e8e8; padding: 8px; text-align: center; color: rgba(0,0,0,0.65);"><b style="color: #52c41a;">累加求和</b></td>
+	                            </tr>
                             <tr>
                                 <td style="border: 1px solid #e8e8e8; padding: 8px; font-weight: 500;">客户标识字段<br><span style="font-weight: normal; font-size: 12px; color: #999;">用户UID、国家、异常提示</span><br><span style="font-weight: normal; font-size: 12px; color: #fa8c16;">（异常提示：标记亏损用户）</span></td>
                                 <td style="border: 1px solid #e8e8e8; padding: 8px; text-align: center; color: rgba(0,0,0,0.65);">直接展示</td>
@@ -1000,11 +1006,11 @@
                     </table>
                 </div>
 
-                <p style="font-size: 14px; color: rgba(0,0,0,0.65); line-height: 1.8;">
-                    <b style="color: #1890ff;">💡 表格排序功能：</b>所有数值型字段（共14个）均支持点击表头进行排序。<br>
-                    <b>可排序字段：</b>充值、提币、净充值、总充值、盈利比例、现货余额、合约余额、理财余额、现货已实现盈利、合约已实现盈利、AI理财包当前参与金额、AI理财包体验金、AI理财包已赎回、AI理财包收益。<br>
-                    <b>排序方式：</b>点击表头切换排序状态（升序 ↑ → 降序 ↓ → 取消排序），每次点击【查询】后排序状态会重置。
-                </p>
+	                <p style="font-size: 14px; color: rgba(0,0,0,0.65); line-height: 1.8;">
+	                    <b style="color: #1890ff;">💡 表格排序功能：</b>所有数值型字段均支持点击表头进行排序。<br>
+	                    <b>可排序字段：</b>提币、净充值、总充值、盈利比例、现货余额、合约余额、理财余额、现货已实现盈利、合约已实现盈利、AI理财包当前参与金额、AI理财包体验金、AI理财包已赎回、AI理财包收益、活动奖励、AI COPY返佣、合约返佣、现货返佣。<br>
+	                    <b>排序方式：</b>点击表头切换排序状态（升序 ↑ → 降序 ↓ → 取消排序），每次点击【查询】后排序状态会重置。
+	                </p>
             </div>
 
             <div style="margin-bottom: 30px;">
@@ -1108,37 +1114,33 @@
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">总监</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">组长</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">业务员</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">充值合计</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">净充值</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">...</th>
+	                                <th style="border: 1px solid #d9d9d9; padding: 6px;">提币</th>
+	                                <th style="border: 1px solid #d9d9d9; padding: 6px;">...</th>
                             </tr>
-                            <tr>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">11-01~11-15</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">240,000</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">199,500</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">11-01~11-15</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员2</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">90,000</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">73,500</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">11-01~11-15</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">总监2</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员3</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">173,000</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">110,000</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
-                            </tr>
+	                            <tr>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">11-01~11-15</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员1</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">199,500</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
+	                            </tr>
+	                            <tr>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">11-01~11-15</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员2</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">73,500</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
+	                            </tr>
+	                            <tr>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">11-01~11-15</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">总监2</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员3</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">110,000</td>
+	                                <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
+	                            </tr>
                         </table>
                     </div>
                     <p style="font-size: 12px; color: #999; margin-top: 8px;">💡 按业务员汇总整月数据，不展示客户UID，快速了解全局业绩</p>
@@ -1161,7 +1163,7 @@
                                 <th style="border: 1px solid #d9d9d9; padding: 6px; color: #1890ff;">异常提示</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px; color: #1890ff;">国家</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px; color: #1890ff;">UID</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">充值</th>
+                                <th style="border: 1px solid #d9d9d9; padding: 6px;">提币</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">...</th>
                             </tr>
                             <tr>
@@ -1249,16 +1251,14 @@
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">总监</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">组长</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">业务员</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">充值合计</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">净充值</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">...</th>
+	                                <th style="border: 1px solid #d9d9d9; padding: 6px;">提币</th>
+	                                <th style="border: 1px solid #d9d9d9; padding: 6px;">...</th>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">2025-10</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">142,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">115,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1267,7 +1267,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">240,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">199,500</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1276,7 +1275,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">113,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">90,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1302,9 +1300,8 @@
                                 <th style="border: 1px solid #d9d9d9; padding: 6px; color: #1890ff;">异常提示</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px; color: #1890ff;">国家</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px; color: #1890ff;">UID</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">充值合计</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">净充值</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">...</th>
+	                                <th style="border: 1px solid #d9d9d9; padding: 6px;">提币</th>
+	                                <th style="border: 1px solid #d9d9d9; padding: 6px;">...</th>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">11-01~11-15</td>
@@ -1314,7 +1311,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">-</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">日本</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">U10008</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">173,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">110,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1326,7 +1322,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px; color: #ff4d4f;">异常</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">法国</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">U10001</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">150,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">119,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1338,13 +1333,12 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px; color: #ff4d4f;">异常</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">德国</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">U10016</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">90,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">70,500</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
                         </table>
                     </div>
-                    <p style="font-size: 12px; color: #999; margin-top: 8px;">💡 勾选代理链+时间段，每个客户汇总成一行，可以按充值金额排序找到高价值客户，查看其归属和异常状态</p>
+                    <p style="font-size: 12px; color: #999; margin-top: 8px;">💡 勾选代理链+时间段，每个客户汇总成一行，可以按总充值金额排序找到高价值客户，查看其归属和异常状态</p>
                 </div>
 
                 <!-- 示例5 -->
@@ -1361,8 +1355,7 @@
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">总监</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">组长</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">业务员</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">充值合计</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">净充值</th>
+                                <th style="border: 1px solid #d9d9d9; padding: 6px;">提币</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">...</th>
                             </tr>
                             <tr>
@@ -1370,7 +1363,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">240,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">199,500</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1379,7 +1371,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员2</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">90,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">73,500</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1388,7 +1379,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监2</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员3</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">173,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">110,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1397,7 +1387,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监2</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长2</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">85,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">68,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1420,8 +1409,7 @@
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">总监</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">组长</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">业务员</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">充值合计</th>
-                                <th style="border: 1px solid #d9d9d9; padding: 6px;">净充值</th>
+                                <th style="border: 1px solid #d9d9d9; padding: 6px;">提币</th>
                                 <th style="border: 1px solid #d9d9d9; padding: 6px;">...</th>
                             </tr>
                             <tr>
@@ -1429,7 +1417,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员1</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">495,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">404,500</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1438,7 +1425,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员2</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">185,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">151,500</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1447,7 +1433,6 @@
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">总监2</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">组长1</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">业务员3</td>
-                                <td style="border: 1px solid #d9d9d9; padding: 6px;">356,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">226,000</td>
                                 <td style="border: 1px solid #d9d9d9; padding: 6px;">...</td>
                             </tr>
@@ -1578,11 +1563,11 @@
             { date: '2025-11-01', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员1', warning: '', country: '法国', uid: 'U10001', deposit: 50000, withdraw: 10000, netDeposit: 40000, totalDeposit: 150000, profitRatio: '12.5%', spotBalance: 35000, contractBalance: 28000, financeBalance: 20000, spotProfit: 4500, contractProfit: 3200, aiAmount: 15000, aiExperience: 1000, aiRedeemed: 5000, aiProfit: 1200 },
             { date: '2025-11-01', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员1', warning: '', country: '德国', uid: 'U10016', deposit: 28000, withdraw: 6000, netDeposit: 22000, totalDeposit: 72000, profitRatio: '10.8%', spotBalance: 20000, contractBalance: 16000, financeBalance: 11000, spotProfit: 2500, contractProfit: 1800, aiAmount: 7200, aiExperience: 450, aiRedeemed: 2800, aiProfit: 650 },
             { date: '2025-11-01', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员2', warning: '', country: '越南', uid: 'U10002', deposit: 30000, withdraw: 5000, netDeposit: 25000, totalDeposit: 80000, profitRatio: '8.3%', spotBalance: 22000, contractBalance: 18000, financeBalance: 12000, spotProfit: 2800, contractProfit: 1900, aiAmount: 8000, aiExperience: 500, aiRedeemed: 3000, aiProfit: 750 },
-            { date: '2025-11-01', level1: '推广中心东总', level2: '总监1', level3: '组长2', level4: '业务员1', warning: '充值异常', country: '泰国', uid: 'U10003', deposit: 120000, withdraw: 80000, netDeposit: 40000, totalDeposit: 320000, profitRatio: '15.2%', spotBalance: 65000, contractBalance: 55000, financeBalance: 40000, spotProfit: 9500, contractProfit: 7800, aiAmount: 30000, aiExperience: 2000, aiRedeemed: 12000, aiProfit: 2800 },
+            { date: '2025-11-01', level1: '推广中心东总', level2: '总监1', level3: '组长2', level4: '业务员1', warning: '异常', country: '泰国', uid: 'U10003', deposit: 120000, withdraw: 80000, netDeposit: 40000, totalDeposit: 320000, profitRatio: '15.2%', spotBalance: 65000, contractBalance: 55000, financeBalance: 40000, spotProfit: 9500, contractProfit: 7800, aiAmount: 30000, aiExperience: 2000, aiRedeemed: 12000, aiProfit: 2800 },
             { date: '2025-11-01', level1: '推广中心东总', level2: '总监2', level3: '组长1', level4: '业务员3', warning: '', country: '日本', uid: 'U10008', deposit: 55000, withdraw: 20000, netDeposit: 35000, totalDeposit: 180000, profitRatio: '13.8%', spotBalance: 42000, contractBalance: 35000, financeBalance: 25000, spotProfit: 5500, contractProfit: 4200, aiAmount: 18000, aiExperience: 1200, aiRedeemed: 7000, aiProfit: 1550 },
             { date: '2025-11-01', level1: '推广中心东总', level2: '总监2', level3: '组长1', level4: '业务员1', warning: '', country: '菲律宾', uid: 'U10006', deposit: 38000, withdraw: 12000, netDeposit: 26000, totalDeposit: 95000, profitRatio: '9.2%', spotBalance: 28000, contractBalance: 22000, financeBalance: 15000, spotProfit: 3200, contractProfit: 2100, aiAmount: 10000, aiExperience: 600, aiRedeemed: 3800, aiProfit: 820 },
             { date: '2025-11-01', level1: '推广中心东总', level2: '总监3', level3: '组长1', level4: '业务员1', warning: '', country: '韩国', uid: 'U10009', deposit: 42000, withdraw: 18000, netDeposit: 24000, totalDeposit: 110000, profitRatio: '11.2%', spotBalance: 30000, contractBalance: 25000, financeBalance: 17000, spotProfit: 3500, contractProfit: 2400, aiAmount: 11000, aiExperience: 700, aiRedeemed: 4200, aiProfit: 920 },
-            { date: '2025-11-01', level1: '推广中心东总', level2: '总监4', level3: '组长1', level4: '业务员1', warning: '账户异常', country: '越南', uid: 'U10011', deposit: 35000, withdraw: 30000, netDeposit: 5000, totalDeposit: 75000, profitRatio: '5.5%', spotBalance: 15000, contractBalance: 12000, financeBalance: 8000, spotProfit: 1500, contractProfit: 980, aiAmount: 5000, aiExperience: 250, aiRedeemed: 1800, aiProfit: 380 },
+            { date: '2025-11-01', level1: '推广中心东总', level2: '总监4', level3: '组长1', level4: '业务员1', warning: '异常', country: '越南', uid: 'U10011', deposit: 35000, withdraw: 30000, netDeposit: 5000, totalDeposit: 75000, profitRatio: '5.5%', spotBalance: 15000, contractBalance: 12000, financeBalance: 8000, spotProfit: 1500, contractProfit: 980, aiAmount: 5000, aiExperience: 250, aiRedeemed: 1800, aiProfit: 380 },
             { date: '2025-11-01', level1: '推广中心东总', level2: '总监4', level3: '组长1', level4: '业务员2', warning: '', country: '泰国', uid: 'U10012', deposit: 48000, withdraw: 22000, netDeposit: 26000, totalDeposit: 135000, profitRatio: '12.0%', spotBalance: 36000, contractBalance: 30000, financeBalance: 22000, spotProfit: 4200, contractProfit: 3100, aiAmount: 14000, aiExperience: 900, aiRedeemed: 5500, aiProfit: 1180 },
 
             // ===== 11-02（周六）：7条数据 =====
@@ -1590,13 +1575,13 @@
             { date: '2025-11-02', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员1', warning: '', country: '德国', uid: 'U10016', deposit: 30000, withdraw: 6500, netDeposit: 23500, totalDeposit: 95500, profitRatio: '11.0%', spotBalance: 21000, contractBalance: 17000, financeBalance: 11500, spotProfit: 2600, contractProfit: 1900, aiAmount: 7500, aiExperience: 470, aiRedeemed: 2900, aiProfit: 680 },
             { date: '2025-11-02', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员2', warning: '', country: '越南', uid: 'U10002', deposit: 32000, withdraw: 6000, netDeposit: 26000, totalDeposit: 106000, profitRatio: '8.5%', spotBalance: 23000, contractBalance: 18500, financeBalance: 12500, spotProfit: 2900, contractProfit: 1950, aiAmount: 8200, aiExperience: 520, aiRedeemed: 3100, aiProfit: 780 },
             { date: '2025-11-02', level1: '推广中心东总', level2: '总监2', level3: '组长1', level4: '业务员3', warning: '', country: '日本', uid: 'U10008', deposit: 58000, withdraw: 21000, netDeposit: 37000, totalDeposit: 217000, profitRatio: '14.2%', spotBalance: 44000, contractBalance: 36000, financeBalance: 26000, spotProfit: 5700, contractProfit: 4300, aiAmount: 18500, aiExperience: 1250, aiRedeemed: 7200, aiProfit: 1600 },
-            { date: '2025-11-02', level1: '推广中心东总', level2: '总监2', level3: '组长1', level4: '业务员2', warning: '提币异常', country: '新加坡', uid: 'U10007', deposit: 85000, withdraw: 60000, netDeposit: 25000, totalDeposit: 280000, profitRatio: '18.5%', spotBalance: 58000, contractBalance: 48000, financeBalance: 35000, spotProfit: 8200, contractProfit: 6500, aiAmount: 25000, aiExperience: 1500, aiRedeemed: 10000, aiProfit: 2200 },
+            { date: '2025-11-02', level1: '推广中心东总', level2: '总监2', level3: '组长1', level4: '业务员2', warning: '异常', country: '新加坡', uid: 'U10007', deposit: 85000, withdraw: 60000, netDeposit: 25000, totalDeposit: 280000, profitRatio: '18.5%', spotBalance: 58000, contractBalance: 48000, financeBalance: 35000, spotProfit: 8200, contractProfit: 6500, aiAmount: 25000, aiExperience: 1500, aiRedeemed: 10000, aiProfit: 2200 },
             { date: '2025-11-02', level1: '推广中心东总', level2: '总监3', level3: '组长1', level4: '业务员2', warning: '', country: '法国', uid: 'U10010', deposit: 68000, withdraw: 25000, netDeposit: 43000, totalDeposit: 220000, profitRatio: '14.5%', spotBalance: 48000, contractBalance: 40000, financeBalance: 30000, spotProfit: 6800, contractProfit: 5200, aiAmount: 22000, aiExperience: 1400, aiRedeemed: 8500, aiProfit: 1850 },
             { date: '2025-11-02', level1: '推广中心东总', level2: '总监1', level3: '组长2', level4: '业务员2', warning: '', country: '马来西亚', uid: 'U10004', deposit: 25000, withdraw: 8000, netDeposit: 17000, totalDeposit: 65000, profitRatio: '6.8%', spotBalance: 18000, contractBalance: 15000, financeBalance: 10000, spotProfit: 1800, contractProfit: 1200, aiAmount: 6000, aiExperience: 300, aiRedeemed: 2000, aiProfit: 450 },
 
             // ===== 11-03（周日）：7条数据 =====
             { date: '2025-11-03', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员1', warning: '', country: '法国', uid: 'U10001', deposit: 48000, withdraw: 9000, netDeposit: 39000, totalDeposit: 241000, profitRatio: '12.2%', spotBalance: 34000, contractBalance: 27000, financeBalance: 19000, spotProfit: 4400, contractProfit: 3100, aiAmount: 14800, aiExperience: 980, aiRedeemed: 4900, aiProfit: 1180 },
-            { date: '2025-11-03', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员1', warning: '提币异常', country: '德国', uid: 'U10016', deposit: 32000, withdraw: 7000, netDeposit: 25000, totalDeposit: 120500, profitRatio: '11.5%', spotBalance: 22000, contractBalance: 18000, financeBalance: 12000, spotProfit: 2700, contractProfit: 2000, aiAmount: 7800, aiExperience: 490, aiRedeemed: 3000, aiProfit: 710 },
+            { date: '2025-11-03', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员1', warning: '异常', country: '德国', uid: 'U10016', deposit: 32000, withdraw: 7000, netDeposit: 25000, totalDeposit: 120500, profitRatio: '11.5%', spotBalance: 22000, contractBalance: 18000, financeBalance: 12000, spotProfit: 2700, contractProfit: 2000, aiAmount: 7800, aiExperience: 490, aiRedeemed: 3000, aiProfit: 710 },
             { date: '2025-11-03', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员2', warning: '', country: '越南', uid: 'U10002', deposit: 28000, withdraw: 5500, netDeposit: 22500, totalDeposit: 128500, profitRatio: '8.0%', spotBalance: 21000, contractBalance: 17500, financeBalance: 11500, spotProfit: 2700, contractProfit: 1850, aiAmount: 7800, aiExperience: 480, aiRedeemed: 2900, aiProfit: 720 },
             { date: '2025-11-03', level1: '推广中心东总', level2: '总监1', level3: '组长3', level4: '业务员1', warning: '', country: '印尼', uid: 'U10005', deposit: 45000, withdraw: 15000, netDeposit: 30000, totalDeposit: 120000, profitRatio: '10.5%', spotBalance: 32000, contractBalance: 26000, financeBalance: 18000, spotProfit: 3800, contractProfit: 2600, aiAmount: 12000, aiExperience: 800, aiRedeemed: 4500, aiProfit: 980 },
             { date: '2025-11-03', level1: '推广中心东总', level2: '总监2', level3: '组长1', level4: '业务员3', warning: '', country: '日本', uid: 'U10008', deposit: 60000, withdraw: 22000, netDeposit: 38000, totalDeposit: 255000, profitRatio: '14.5%', spotBalance: 45000, contractBalance: 37000, financeBalance: 27000, spotProfit: 5800, contractProfit: 4400, aiAmount: 19000, aiExperience: 1300, aiRedeemed: 7500, aiProfit: 1700 },
@@ -1613,7 +1598,7 @@
 	            { date: '2025-12-01', level1: '推广中心东总', level2: '总监2', level3: '组长1', level4: '业务员3', warning: '', country: '日本', uid: 'U10008', deposit: 62000, withdraw: 23000, netDeposit: 39000, totalDeposit: 259000, profitRatio: '15.0%', spotBalance: 46000, contractBalance: 38000, financeBalance: 28000, spotProfit: 6000, contractProfit: 4500, aiAmount: 19500, aiExperience: 1350, aiRedeemed: 7800, aiProfit: 1750 },
 	            { date: '2025-12-01', level1: '推广中心东总', level2: '总监3', level3: '组长1', level4: '业务员1', warning: '', country: '韩国', uid: 'U10009', deposit: 45000, withdraw: 19000, netDeposit: 26000, totalDeposit: 136000, profitRatio: '11.5%', spotBalance: 32000, contractBalance: 26000, financeBalance: 18000, spotProfit: 3700, contractProfit: 2500, aiAmount: 11500, aiExperience: 750, aiRedeemed: 4500, aiProfit: 980 },
 	            { date: '2025-12-02', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员1', warning: '', country: '法国', uid: 'U10001', deposit: 58000, withdraw: 12000, netDeposit: 46000, totalDeposit: 293000, profitRatio: '14.0%', spotBalance: 40000, contractBalance: 32000, financeBalance: 23000, spotProfit: 5200, contractProfit: 3700, aiAmount: 16500, aiExperience: 1200, aiRedeemed: 5800, aiProfit: 1400 },
-	            { date: '2025-12-02', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员2', warning: '充值异常', country: '越南', uid: 'U10002', deposit: 38000, withdraw: 8000, netDeposit: 30000, totalDeposit: 195500, profitRatio: '9.5%', spotBalance: 26000, contractBalance: 21000, financeBalance: 15000, spotProfit: 3400, contractProfit: 2200, aiAmount: 9200, aiExperience: 580, aiRedeemed: 3600, aiProfit: 900 },
+	            { date: '2025-12-02', level1: '推广中心东总', level2: '总监1', level3: '组长1', level4: '业务员2', warning: '异常', country: '越南', uid: 'U10002', deposit: 38000, withdraw: 8000, netDeposit: 30000, totalDeposit: 195500, profitRatio: '9.5%', spotBalance: 26000, contractBalance: 21000, financeBalance: 15000, spotProfit: 3400, contractProfit: 2200, aiAmount: 9200, aiExperience: 580, aiRedeemed: 3600, aiProfit: 900 },
 	            { date: '2025-12-02', level1: '推广中心东总', level2: '总监2', level3: '组长1', level4: '业务员3', warning: '', country: '日本', uid: 'U10008', deposit: 65000, withdraw: 24000, netDeposit: 41000, totalDeposit: 300000, profitRatio: '15.5%', spotBalance: 48000, contractBalance: 40000, financeBalance: 29000, spotProfit: 6200, contractProfit: 4700, aiAmount: 20000, aiExperience: 1400, aiRedeemed: 8000, aiProfit: 1800 },
 	            { date: '2025-12-02', level1: '推广中心东总', level2: '总监4', level3: '组长1', level4: '业务员1', warning: '', country: '越南', uid: 'U10011', deposit: 40000, withdraw: 32000, netDeposit: 8000, totalDeposit: 83000, profitRatio: '6.0%', spotBalance: 17000, contractBalance: 13000, financeBalance: 9000, spotProfit: 1700, contractProfit: 1100, aiAmount: 5500, aiExperience: 280, aiRedeemed: 2000, aiProfit: 420 }
 	        ];
@@ -1773,16 +1758,16 @@
         }
 
         // ========== 表格渲染函数 ==========
-        function renderTable(data, timeStatMode = 'single', isChainMode = true, reportType = 'daily') {
-            const tbody = document.querySelector('table tbody');
-            tbody.innerHTML = '';
+	        function renderTable(data, timeStatMode = 'single', isChainMode = true, reportType = 'daily') {
+	            const tbody = document.querySelector('table tbody');
+	            tbody.innerHTML = '';
 
-            if (data.length === 0) {
-                const row = document.createElement('tr');
-                row.innerHTML = '<td colspan="22" style="text-align: center; padding: 40px; color: #999;">暂无数据</td>';
-                tbody.appendChild(row);
-                return;
-            }
+		            if (data.length === 0) {
+		                const row = document.createElement('tr');
+		                row.innerHTML = '<td colspan="25" style="text-align: center; padding: 40px; color: #999;">暂无数据</td>';
+	                tbody.appendChild(row);
+	                return;
+	            }
 
             data.forEach(item => {
                 const row = document.createElement('tr');
@@ -1803,20 +1788,19 @@
                     // 时间段模式：已经是 MM-DD~MM-DD 格式，直接显示
                 }
 
-                if (isChainMode) {
+		                if (isChainMode) {
                     // 代理链模式：显示完整字段（包括异常提示、国家、UID）
-                    row.innerHTML = `
+		                    row.innerHTML = `
                         <td>${displayDate}</td>
                         <td>${item.level1}</td>
                         <td>${item.level2}</td>
                         <td>${item.level3}</td>
                         <td>${item.level4}</td>
                         <td style="color: ${item.warning ? '#ff4d4f' : 'inherit'}">${item.warning ? '异常' : '-'}</td>
-                        <td>${item.country}</td>
-                        <td>${item.uid}</td>
-                        <td>${item.deposit.toLocaleString()}</td>
-                        <td>${item.withdraw.toLocaleString()}</td>
-                        <td>${item.netDeposit.toLocaleString()}</td>
+	                        <td>${item.country}</td>
+	                        <td>${item.uid}</td>
+	                        <td>${item.withdraw.toLocaleString()}</td>
+	                        <td>${item.netDeposit.toLocaleString()}</td>
                         <td>${item.totalDeposit.toLocaleString()}</td>
                         <td>${item.profitRatio}</td>
                         <td>${item.spotBalance.toLocaleString()}</td>
@@ -1824,22 +1808,25 @@
                         <td>${item.financeBalance.toLocaleString()}</td>
                         <td>${item.spotProfit.toLocaleString()}</td>
                         <td>${item.contractProfit.toLocaleString()}</td>
-                        <td>${item.aiAmount.toLocaleString()}</td>
-                        <td>${item.aiExperience.toLocaleString()}</td>
-                        <td>${item.aiRedeemed.toLocaleString()}</td>
-                        <td>${item.aiProfit.toLocaleString()}</td>
+		                        <td>${item.aiAmount.toLocaleString()}</td>
+		                        <td>${item.aiExperience.toLocaleString()}</td>
+		                        <td>${item.aiRedeemed.toLocaleString()}</td>
+		                        <td>${item.aiProfit.toLocaleString()}</td>
+		                        <td>${(item.activityReward || 0).toLocaleString()}</td>
+		                        <td>${(item.aiCopyRebate || 0).toLocaleString()}</td>
+		                        <td>${(item.contractRebate || 0).toLocaleString()}</td>
+		                        <td>${(item.spotRebate || 0).toLocaleString()}</td>
                     `;
-                } else {
+	                } else {
                     // 汇总模式：隐藏异常提示、国家、UID 三列
-                    row.innerHTML = `
+		                    row.innerHTML = `
                         <td>${displayDate}</td>
                         <td>${item.level1}</td>
                         <td>${item.level2}</td>
-                        <td>${item.level3}</td>
-                        <td>${item.level4}</td>
-                        <td>${item.deposit.toLocaleString()}</td>
-                        <td>${item.withdraw.toLocaleString()}</td>
-                        <td>${item.netDeposit.toLocaleString()}</td>
+	                        <td>${item.level3}</td>
+	                        <td>${item.level4}</td>
+	                        <td>${item.withdraw.toLocaleString()}</td>
+	                        <td>${item.netDeposit.toLocaleString()}</td>
                         <td>${item.totalDeposit.toLocaleString()}</td>
                         <td>${item.profitRatio}</td>
                         <td>${item.spotBalance.toLocaleString()}</td>
@@ -1847,10 +1834,14 @@
                         <td>${item.financeBalance.toLocaleString()}</td>
                         <td>${item.spotProfit.toLocaleString()}</td>
                         <td>${item.contractProfit.toLocaleString()}</td>
-                        <td>${item.aiAmount.toLocaleString()}</td>
-                        <td>${item.aiExperience.toLocaleString()}</td>
-                        <td>${item.aiRedeemed.toLocaleString()}</td>
-                        <td>${item.aiProfit.toLocaleString()}</td>
+		                        <td>${item.aiAmount.toLocaleString()}</td>
+		                        <td>${item.aiExperience.toLocaleString()}</td>
+		                        <td>${item.aiRedeemed.toLocaleString()}</td>
+		                        <td>${item.aiProfit.toLocaleString()}</td>
+		                        <td>${(item.activityReward || 0).toLocaleString()}</td>
+		                        <td>${(item.aiCopyRebate || 0).toLocaleString()}</td>
+		                        <td>${(item.contractRebate || 0).toLocaleString()}</td>
+		                        <td>${(item.spotRebate || 0).toLocaleString()}</td>
                     `;
                 }
                 tbody.appendChild(row);
@@ -1965,22 +1956,30 @@
                             aiAmount: 0,
                             aiExperience: 0,
                             aiRedeemed: 0,
-                            aiProfit: 0
+	                            aiProfit: 0,
+	                            activityReward: 0,
+	                            aiCopyRebate: 0,
+	                            contractRebate: 0,
+	                            spotRebate: 0
                         };
                     }
-                    monthlyGroupedData[key].deposit += item.deposit;
-                    monthlyGroupedData[key].withdraw += item.withdraw;
-                    monthlyGroupedData[key].netDeposit += item.netDeposit;
-                    monthlyGroupedData[key].totalDeposit += item.totalDeposit;
-                    monthlyGroupedData[key].spotBalance += item.spotBalance;
-                    monthlyGroupedData[key].contractBalance += item.contractBalance;
-                    monthlyGroupedData[key].financeBalance += item.financeBalance;
-                    monthlyGroupedData[key].spotProfit += item.spotProfit;
-                    monthlyGroupedData[key].contractProfit += item.contractProfit;
-                    monthlyGroupedData[key].aiAmount += item.aiAmount;
-                    monthlyGroupedData[key].aiExperience += item.aiExperience;
-                    monthlyGroupedData[key].aiRedeemed += item.aiRedeemed;
-                    monthlyGroupedData[key].aiProfit += item.aiProfit;
+	                    monthlyGroupedData[key].deposit += item.deposit;
+	                    monthlyGroupedData[key].withdraw += item.withdraw;
+	                    monthlyGroupedData[key].netDeposit += item.netDeposit;
+	                    monthlyGroupedData[key].totalDeposit += item.totalDeposit;
+	                    monthlyGroupedData[key].spotBalance += item.spotBalance;
+	                    monthlyGroupedData[key].contractBalance += item.contractBalance;
+	                    monthlyGroupedData[key].financeBalance += item.financeBalance;
+	                    monthlyGroupedData[key].spotProfit += item.spotProfit;
+	                    monthlyGroupedData[key].contractProfit += item.contractProfit;
+	                    monthlyGroupedData[key].aiAmount += item.aiAmount;
+	                    monthlyGroupedData[key].aiExperience += item.aiExperience;
+	                    monthlyGroupedData[key].aiRedeemed += item.aiRedeemed;
+	                    monthlyGroupedData[key].aiProfit += item.aiProfit;
+	                    monthlyGroupedData[key].activityReward += (item.activityReward || 0);
+	                    monthlyGroupedData[key].aiCopyRebate += (item.aiCopyRebate || 0);
+	                    monthlyGroupedData[key].contractRebate += (item.contractRebate || 0);
+	                    monthlyGroupedData[key].spotRebate += (item.spotRebate || 0);
                     if (item.warning) {
                         monthlyGroupedData[key].warning = '异常';
                     }
@@ -2030,22 +2029,30 @@
                                     aiAmount: 0,
                                     aiExperience: 0,
                                     aiRedeemed: 0,
-                                    aiProfit: 0
+	                                    aiProfit: 0,
+	                                    activityReward: 0,
+	                                    aiCopyRebate: 0,
+	                                    contractRebate: 0,
+	                                    spotRebate: 0
                                 };
                             }
-                            groupedData[key].deposit += item.deposit;
-                            groupedData[key].withdraw += item.withdraw;
-                            groupedData[key].netDeposit += item.netDeposit;
-                            groupedData[key].totalDeposit += item.totalDeposit;
-                            groupedData[key].spotBalance += item.spotBalance;
-                            groupedData[key].contractBalance += item.contractBalance;
-                            groupedData[key].financeBalance += item.financeBalance;
-                            groupedData[key].spotProfit += item.spotProfit;
-                            groupedData[key].contractProfit += item.contractProfit;
-                            groupedData[key].aiAmount += item.aiAmount;
-                            groupedData[key].aiExperience += item.aiExperience;
-                            groupedData[key].aiRedeemed += item.aiRedeemed;
-                            groupedData[key].aiProfit += item.aiProfit;
+	                            groupedData[key].deposit += item.deposit;
+	                            groupedData[key].withdraw += item.withdraw;
+	                            groupedData[key].netDeposit += item.netDeposit;
+	                            groupedData[key].totalDeposit += item.totalDeposit;
+	                            groupedData[key].spotBalance += item.spotBalance;
+	                            groupedData[key].contractBalance += item.contractBalance;
+	                            groupedData[key].financeBalance += item.financeBalance;
+	                            groupedData[key].spotProfit += item.spotProfit;
+	                            groupedData[key].contractProfit += item.contractProfit;
+	                            groupedData[key].aiAmount += item.aiAmount;
+	                            groupedData[key].aiExperience += item.aiExperience;
+	                            groupedData[key].aiRedeemed += item.aiRedeemed;
+	                            groupedData[key].aiProfit += item.aiProfit;
+	                            groupedData[key].activityReward += (item.activityReward || 0);
+	                            groupedData[key].aiCopyRebate += (item.aiCopyRebate || 0);
+	                            groupedData[key].contractRebate += (item.contractRebate || 0);
+	                            groupedData[key].spotRebate += (item.spotRebate || 0);
                             if (item.warning) {
                                 groupedData[key].warning = '异常';
                             }
@@ -2097,22 +2104,30 @@
                                 aiAmount: 0,
                                 aiExperience: 0,
                                 aiRedeemed: 0,
-                                aiProfit: 0
+	                                aiProfit: 0,
+	                                activityReward: 0,
+	                                aiCopyRebate: 0,
+	                                contractRebate: 0,
+	                                spotRebate: 0
                             };
                         }
-                        groupedData[key].deposit += item.deposit;
-                        groupedData[key].withdraw += item.withdraw;
-                        groupedData[key].netDeposit += item.netDeposit;
-                        groupedData[key].totalDeposit += item.totalDeposit;
-                        groupedData[key].spotBalance += item.spotBalance;
-                        groupedData[key].contractBalance += item.contractBalance;
-                        groupedData[key].financeBalance += item.financeBalance;
-                        groupedData[key].spotProfit += item.spotProfit;
-                        groupedData[key].contractProfit += item.contractProfit;
-                        groupedData[key].aiAmount += item.aiAmount;
-                        groupedData[key].aiExperience += item.aiExperience;
-                        groupedData[key].aiRedeemed += item.aiRedeemed;
-                        groupedData[key].aiProfit += item.aiProfit;
+	                        groupedData[key].deposit += item.deposit;
+	                        groupedData[key].withdraw += item.withdraw;
+	                        groupedData[key].netDeposit += item.netDeposit;
+	                        groupedData[key].totalDeposit += item.totalDeposit;
+	                        groupedData[key].spotBalance += item.spotBalance;
+	                        groupedData[key].contractBalance += item.contractBalance;
+	                        groupedData[key].financeBalance += item.financeBalance;
+	                        groupedData[key].spotProfit += item.spotProfit;
+	                        groupedData[key].contractProfit += item.contractProfit;
+	                        groupedData[key].aiAmount += item.aiAmount;
+	                        groupedData[key].aiExperience += item.aiExperience;
+	                        groupedData[key].aiRedeemed += item.aiRedeemed;
+	                        groupedData[key].aiProfit += item.aiProfit;
+	                        groupedData[key].activityReward += (item.activityReward || 0);
+	                        groupedData[key].aiCopyRebate += (item.aiCopyRebate || 0);
+	                        groupedData[key].contractRebate += (item.contractRebate || 0);
+	                        groupedData[key].spotRebate += (item.spotRebate || 0);
                     });
                     filteredData = Object.values(groupedData);
                     // 重新计算盈利比例
