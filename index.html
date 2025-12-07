@@ -117,6 +117,7 @@
         /* 表格样式 */
         .table-container {
             overflow-x: auto;
+            position: relative;
         }
         table {
             border-collapse: collapse;
@@ -183,6 +184,9 @@
         tr:hover {
             background-color: #fafafa;
         }
+        tr:hover .sticky-col {
+            background-color: #fafafa;
+        }
         /* 代理链专属列样式 */
         .chain-only-column {
             transition: all 0.3s ease;
@@ -190,6 +194,21 @@
         .chain-only-column.hidden {
             display: none;
         }
+        /* 冻结列（前五列）样式 */
+        .sticky-col {
+            position: sticky;
+            background-color: #fff;
+            z-index: 2;
+        }
+        th.sticky-col {
+            z-index: 3;
+        }
+        /* 尽量收窄前五列宽度，让后面的数据列空间更大 */
+        .sticky-col.col-1 { left: 0;   min-width: 70px;  max-width: 70px; }
+        .sticky-col.col-2 { left: 70px;  min-width: 80px;  max-width: 80px; }
+        .sticky-col.col-3 { left: 150px; min-width: 100px; max-width: 100px; }
+        .sticky-col.col-4 { left: 250px; min-width: 100px; max-width: 100px; }
+        .sticky-col.col-5 { left: 350px; min-width: 100px; max-width: 100px; }
         /* 筛选区域样式 */
         .filter-section {
             background-color: white;
@@ -864,38 +883,40 @@
             </div>
         </div>
 
-        <div class="content-body" id="statsTableContainer">
-            <div class="table-container">
-                <table>
-		                    <thead>
-		                        <tr>
-		                            <th>日期</th>
-		                            <th>一级<br>东总</th>
-		                            <th>二级<br>总监</th>
-		                            <th>三级<br>（组长）</th>
-		                            <th>四级<br>（业务员）</th>
-		                            <th class="chain-only-column">异常提示</th>
-		                            <th class="chain-only-column">国家（业务员旗下的用户注册归属地）</th>
-		                            <th class="chain-only-column">用户uid</th>
-		                            <th class="sortable" data-field="withdraw">提币<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="netDeposit">净充值<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="totalDeposit">总充值<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="profitRatio">盈利比例<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="spotBalance">现货余额<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="contractBalance">合约余额<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="financeBalance">理财余额（不含体验金<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="spotProfit">现货已实现盈利<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="contractProfit">合约已实现盈利<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="aiAmount">AI理财包当前参与金额（不含体验金）<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="aiExperience">AI理财包体验金（收益中）<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="aiRedeemed">AI理财包已赎回<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="aiProfit">AI理财包收益<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="activityReward">活动奖励<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="aiCopyRebate">AI COPY返佣<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="contractRebate">合约返佣<span class="sort-indicator"></span></th>
-		                            <th class="sortable" data-field="spotRebate">现货返佣<span class="sort-indicator"></span></th>
-		                        </tr>
-		                    </thead>
+	        <div class="content-body" id="statsTableContainer">
+	            <div class="table-container">
+	                <table>
+	                    <thead>
+	                        <tr>
+	                            <th class="sticky-col col-1">日期</th>
+	                            <th class="sticky-col col-2">一级</th>
+	                            <th class="sticky-col col-3">二级<br>总监</th>
+	                            <th class="sticky-col col-4">三级<br>（组长）</th>
+	                            <th class="sticky-col col-5">四级<br>（业务员）</th>
+	                            <th class="chain-only-column">异常提示</th>
+	                            <th class="chain-only-column">国家（业务员旗下的用户注册归属地）</th>
+	                            <th class="chain-only-column">用户uid</th>
+	                            <th class="sortable" data-field="withdraw">提币<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="netDeposit">净充值<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="totalDeposit">总充值<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="profitRatio">盈利比例<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="spotBalance">现货余额<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="contractBalance">合约余额<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="financeBalance">理财余额（不含体验金<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="spotProfit">现货已实现盈利<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="contractProfit">合约已实现盈利<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="aiAmount">AI理财包当前参与金额（不含体验金）<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="aiExperience">AI理财包体验金（收益中）<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="aiRedeemed">AI理财包已赎回<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="aiProfit">AI理财包收益<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="activityReward">活动奖励<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="aiCopyRebate">AI COPY返佣<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="contractRebate">合约返佣<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="spotRebate">现货返佣<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="floatingProfit">浮亏盈利<span class="sort-indicator"></span></th>
+	                            <th class="sortable" data-field="realProfit">实际盈利<span class="sort-indicator"></span></th>
+	                        </tr>
+	                    </thead>
                     <tbody>
                         <!-- 数据行将在这里显示 -->
                     </tbody>
@@ -948,9 +969,12 @@
 	        <!-- 需求文档 -->
 	        <div class="content-body" style="margin-top: 20px;">
 	            <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 6px; color: rgba(0,0,0,0.85);">📋 需求文档</h3>
-	            <p style="font-size: 12px; color: #999; margin: 0 0 12px 0;">
-	                <b>2025-12-05 补充：</b>去掉“充值”字段，新增“活动奖励、AI COPY返佣、合约返佣、现货返佣”四个字段。
-	            </p>
+		            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0;">
+		                <b>2025-12-07 补充：</b>前五列改为冻结列，“一级”列去掉“东总”字样，新增“浮亏盈利、实际盈利”字段，并补充字段口径说明。
+		            </p>
+		            <p style="font-size: 12px; color: #999; margin: 0 0 12px 0;">
+		                <b>2025-12-05 补充：</b>去掉“充值”字段，新增“活动奖励、AI COPY返佣、合约返佣、现货返佣”四个字段。
+		            </p>
 
 	            <!-- 需求背景说明 -->
             <div style="margin-bottom: 25px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);">
@@ -969,6 +993,12 @@
                 <p style="font-size: 14px; color: rgba(0,0,0,0.65); line-height: 1.8; margin-bottom: 10px;">
                     表格中的统计数据字段定义参考【平台数据看板】保持一致。
                 </p>
+		                		<p style="font-size: 13px; color: rgba(0,0,0,0.65); line-height: 1.7; margin: 0 0 10px 0;">
+		                		    <b>浮亏盈利：</b>用户总资产，
+		                		    只不过这些奖励和返佣（活动奖励、AI COPY返佣、合约返佣、现货返佣）都是平台送给用户的钱，对平台来说属于“浮亏”。<br>
+			                		    <b>实际盈利：</b>浮亏盈利（总资产）减去
+			                		    活动奖励和各类返佣（即减去活动奖励、AI COPY返佣、合约返佣、现货返佣）。
+		                		</p>
 
                 <div style="background: #fff7e6; border-left: 4px solid #fa8c16; padding: 12px 15px; margin-bottom: 15px; border-radius: 4px;">
                     <p style="font-size: 14px; color: rgba(0,0,0,0.85); line-height: 1.8; margin: 0;">
@@ -986,9 +1016,9 @@
                                 <th style="border: 1px solid #e8e8e8; padding: 8px; text-align: center; background: #fff7e6;"><b style="color: #fa8c16;">汇总模式</b><br><span style="font-weight: normal; font-size: 12px; color: #666;">（不勾选"代理链"）</span></th>
                             </tr>
                         </thead>
-                        <tbody>
-	                            <tr>
-	                                <td style="border: 1px solid #e8e8e8; padding: 8px; font-weight: 500;">数值字段<br><span style="font-weight: normal; font-size: 12px; color: #999;">提币、净充值、总充值、各类余额、各类盈利、AI理财包相关、活动奖励及各类返佣</span></td>
+		                        <tbody>
+		                            <tr>
+		                                <td style="border: 1px solid #e8e8e8; padding: 8px; font-weight: 500;">数值字段<br><span style="font-weight: normal; font-size: 12px; color: #999;">提币、净充值、总充值、各类余额、各类盈利、AI理财包相关、活动奖励及各类返佣、浮亏盈利、实际盈利</span></td>
 	                                <td style="border: 1px solid #e8e8e8; padding: 8px; text-align: center; color: rgba(0,0,0,0.65);">直接展示原值</td>
 	                                <td style="border: 1px solid #e8e8e8; padding: 8px; text-align: center; color: rgba(0,0,0,0.65);"><b style="color: #52c41a;">累加求和</b></td>
 	                            </tr>
@@ -1006,11 +1036,11 @@
                     </table>
                 </div>
 
-	                <p style="font-size: 14px; color: rgba(0,0,0,0.65); line-height: 1.8;">
-	                    <b style="color: #1890ff;">💡 表格排序功能：</b>所有数值型字段均支持点击表头进行排序。<br>
-	                    <b>可排序字段：</b>提币、净充值、总充值、盈利比例、现货余额、合约余额、理财余额、现货已实现盈利、合约已实现盈利、AI理财包当前参与金额、AI理财包体验金、AI理财包已赎回、AI理财包收益、活动奖励、AI COPY返佣、合约返佣、现货返佣。<br>
-	                    <b>排序方式：</b>点击表头切换排序状态（升序 ↑ → 降序 ↓ → 取消排序），每次点击【查询】后排序状态会重置。
-	                </p>
+		                		<p style="font-size: 14px; color: rgba(0,0,0,0.65); line-height: 1.8;">
+		                		    <b style="color: #1890ff;">💡 表格排序功能：</b>所有数值型字段均支持点击表头进行排序。<br>
+		                		    <b>可排序字段：</b>提币、净充值、总充值、盈利比例、现货余额、合约余额、理财余额、现货已实现盈利、合约已实现盈利、AI理财包当前参与金额、AI理财包体验金、AI理财包已赎回、AI理财包收益、活动奖励、AI COPY返佣、合约返佣、现货返佣、浮亏盈利、实际盈利。<br>
+		                		    <b>排序方式：</b>点击表头切换排序状态（升序 ↑ → 降序 ↓ → 取消排序），每次点击【查询】后排序状态会重置。
+		                		</p>
             </div>
 
             <div style="margin-bottom: 30px;">
@@ -1757,96 +1787,106 @@
             return hierarchyConfig.staffs.some(s => s.uid === uid && s.id !== excludeId);
         }
 
-        // ========== 表格渲染函数 ==========
+	        // ========== 表格渲染函数 ==========
 	        function renderTable(data, timeStatMode = 'single', isChainMode = true, reportType = 'daily') {
 	            const tbody = document.querySelector('table tbody');
 	            tbody.innerHTML = '';
-
-		            if (data.length === 0) {
-		                const row = document.createElement('tr');
-		                row.innerHTML = '<td colspan="25" style="text-align: center; padding: 40px; color: #999;">暂无数据</td>';
+	
+	            if (data.length === 0) {
+	                const row = document.createElement('tr');
+	                row.innerHTML = '<td colspan="27" style="text-align: center; padding: 40px; color: #999;">暂无数据</td>';
 	                tbody.appendChild(row);
 	                return;
 	            }
-
-            data.forEach(item => {
-                const row = document.createElement('tr');
+	
+	            data.forEach(item => {
+	                const row = document.createElement('tr');
                 // 日期格式化
-                let displayDate = item.date;
-                if (reportType === 'monthly') {
+	                let displayDate = item.date;
+	                if (reportType === 'monthly') {
                     // 月报模式
-                    if (!item.date.includes('~')) {
+	                    if (!item.date.includes('~')) {
                         // 单月模式：显示 YYYY-MM 格式
                         displayDate = item.date; // 已经是 YYYY-MM 格式
                     }
                     // 时间段模式：已经是 YYYY-MM~YYYY-MM 格式，直接显示
                 } else {
                     // 日报模式
-                    if (!item.date.includes('~')) {
+	                    if (!item.date.includes('~')) {
                         displayDate = item.date.substring(5); // 单天模式：只显示 MM-DD
                     }
                     // 时间段模式：已经是 MM-DD~MM-DD 格式，直接显示
-                }
+	                }
 
-		                if (isChainMode) {
-                    // 代理链模式：显示完整字段（包括异常提示、国家、UID）
-		                    row.innerHTML = `
-                        <td>${displayDate}</td>
-                        <td>${item.level1}</td>
-                        <td>${item.level2}</td>
-                        <td>${item.level3}</td>
-                        <td>${item.level4}</td>
-                        <td style="color: ${item.warning ? '#ff4d4f' : 'inherit'}">${item.warning ? '异常' : '-'}</td>
+	                const baseAssets = (item.spotBalance || 0) + (item.contractBalance || 0) + (item.financeBalance || 0) + (item.aiAmount || 0);
+	                const rewardTotal = (item.activityReward || 0) + (item.aiCopyRebate || 0) + (item.contractRebate || 0) + (item.spotRebate || 0);
+	                const netDeposit = item.netDeposit || 0;
+	                const floatingProfitValue = (typeof item.floatingProfit === 'number') ? item.floatingProfit : (baseAssets + rewardTotal - netDeposit);
+	                const realProfitValue = (typeof item.realProfit === 'number') ? item.realProfit : (baseAssets - netDeposit);
+
+	                if (isChainMode) {
+	                    // 代理链模式：显示完整字段（包括异常提示、国家、UID）
+	                    row.innerHTML = `
+	                        <td class="sticky-col col-1">${displayDate}</td>
+	                        <td class="sticky-col col-2">${item.level1}</td>
+	                        <td class="sticky-col col-3">${item.level2}</td>
+	                        <td class="sticky-col col-4">${item.level3}</td>
+	                        <td class="sticky-col col-5">${item.level4}</td>
+	                        <td style="color: ${item.warning ? '#ff4d4f' : 'inherit'}">${item.warning ? '异常' : '-'}</td>
 	                        <td>${item.country}</td>
 	                        <td>${item.uid}</td>
 	                        <td>${item.withdraw.toLocaleString()}</td>
 	                        <td>${item.netDeposit.toLocaleString()}</td>
-                        <td>${item.totalDeposit.toLocaleString()}</td>
-                        <td>${item.profitRatio}</td>
-                        <td>${item.spotBalance.toLocaleString()}</td>
-                        <td>${item.contractBalance.toLocaleString()}</td>
-                        <td>${item.financeBalance.toLocaleString()}</td>
-                        <td>${item.spotProfit.toLocaleString()}</td>
-                        <td>${item.contractProfit.toLocaleString()}</td>
-		                        <td>${item.aiAmount.toLocaleString()}</td>
-		                        <td>${item.aiExperience.toLocaleString()}</td>
-		                        <td>${item.aiRedeemed.toLocaleString()}</td>
-		                        <td>${item.aiProfit.toLocaleString()}</td>
-		                        <td>${(item.activityReward || 0).toLocaleString()}</td>
-		                        <td>${(item.aiCopyRebate || 0).toLocaleString()}</td>
-		                        <td>${(item.contractRebate || 0).toLocaleString()}</td>
-		                        <td>${(item.spotRebate || 0).toLocaleString()}</td>
-                    `;
+	                        <td>${item.totalDeposit.toLocaleString()}</td>
+	                        <td>${item.profitRatio}</td>
+	                        <td>${item.spotBalance.toLocaleString()}</td>
+	                        <td>${item.contractBalance.toLocaleString()}</td>
+	                        <td>${item.financeBalance.toLocaleString()}</td>
+	                        <td>${item.spotProfit.toLocaleString()}</td>
+	                        <td>${item.contractProfit.toLocaleString()}</td>
+	                        <td>${item.aiAmount.toLocaleString()}</td>
+	                        <td>${item.aiExperience.toLocaleString()}</td>
+	                        <td>${item.aiRedeemed.toLocaleString()}</td>
+	                        <td>${item.aiProfit.toLocaleString()}</td>
+	                        <td>${(item.activityReward || 0).toLocaleString()}</td>
+	                        <td>${(item.aiCopyRebate || 0).toLocaleString()}</td>
+	                        <td>${(item.contractRebate || 0).toLocaleString()}</td>
+	                        <td>${(item.spotRebate || 0).toLocaleString()}</td>
+	                        <td>${floatingProfitValue.toLocaleString()}</td>
+	                        <td>${realProfitValue.toLocaleString()}</td>
+	                    `;
 	                } else {
-                    // 汇总模式：隐藏异常提示、国家、UID 三列
-		                    row.innerHTML = `
-                        <td>${displayDate}</td>
-                        <td>${item.level1}</td>
-                        <td>${item.level2}</td>
-	                        <td>${item.level3}</td>
-	                        <td>${item.level4}</td>
+	                    // 汇总模式：隐藏异常提示、国家、UID 三列
+	                    row.innerHTML = `
+	                        <td class="sticky-col col-1">${displayDate}</td>
+	                        <td class="sticky-col col-2">${item.level1}</td>
+	                        <td class="sticky-col col-3">${item.level2}</td>
+	                        <td class="sticky-col col-4">${item.level3}</td>
+	                        <td class="sticky-col col-5">${item.level4}</td>
 	                        <td>${item.withdraw.toLocaleString()}</td>
 	                        <td>${item.netDeposit.toLocaleString()}</td>
-                        <td>${item.totalDeposit.toLocaleString()}</td>
-                        <td>${item.profitRatio}</td>
-                        <td>${item.spotBalance.toLocaleString()}</td>
-                        <td>${item.contractBalance.toLocaleString()}</td>
-                        <td>${item.financeBalance.toLocaleString()}</td>
-                        <td>${item.spotProfit.toLocaleString()}</td>
-                        <td>${item.contractProfit.toLocaleString()}</td>
-		                        <td>${item.aiAmount.toLocaleString()}</td>
-		                        <td>${item.aiExperience.toLocaleString()}</td>
-		                        <td>${item.aiRedeemed.toLocaleString()}</td>
-		                        <td>${item.aiProfit.toLocaleString()}</td>
-		                        <td>${(item.activityReward || 0).toLocaleString()}</td>
-		                        <td>${(item.aiCopyRebate || 0).toLocaleString()}</td>
-		                        <td>${(item.contractRebate || 0).toLocaleString()}</td>
-		                        <td>${(item.spotRebate || 0).toLocaleString()}</td>
-                    `;
-                }
-                tbody.appendChild(row);
-            });
-        }
+	                        <td>${item.totalDeposit.toLocaleString()}</td>
+	                        <td>${item.profitRatio}</td>
+	                        <td>${item.spotBalance.toLocaleString()}</td>
+	                        <td>${item.contractBalance.toLocaleString()}</td>
+	                        <td>${item.financeBalance.toLocaleString()}</td>
+	                        <td>${item.spotProfit.toLocaleString()}</td>
+	                        <td>${item.contractProfit.toLocaleString()}</td>
+	                        <td>${item.aiAmount.toLocaleString()}</td>
+	                        <td>${item.aiExperience.toLocaleString()}</td>
+	                        <td>${item.aiRedeemed.toLocaleString()}</td>
+	                        <td>${item.aiProfit.toLocaleString()}</td>
+	                        <td>${(item.activityReward || 0).toLocaleString()}</td>
+	                        <td>${(item.aiCopyRebate || 0).toLocaleString()}</td>
+	                        <td>${(item.contractRebate || 0).toLocaleString()}</td>
+	                        <td>${(item.spotRebate || 0).toLocaleString()}</td>
+	                        <td>${floatingProfitValue.toLocaleString()}</td>
+	                        <td>${realProfitValue.toLocaleString()}</td>
+	                    `;
+	                }
+	                tbody.appendChild(row);
+	            });
+	        }
 
         // ========== 筛选函数 ==========
         function filterData() {
@@ -2144,6 +2184,15 @@
                     });
                 }
             }
+
+	            // 统一计算浮亏盈利和实际盈利，供渲染和排序使用
+	            filteredData.forEach(item => {
+	                const baseAssets = (item.spotBalance || 0) + (item.contractBalance || 0) + (item.financeBalance || 0) + (item.aiAmount || 0);
+	                const rewardTotal = (item.activityReward || 0) + (item.aiCopyRebate || 0) + (item.contractRebate || 0) + (item.spotRebate || 0);
+	                const netDeposit = item.netDeposit || 0;
+	                item.floatingProfit = baseAssets + rewardTotal - netDeposit;
+	                item.realProfit = baseAssets - netDeposit;
+	            });
 
             // 保存当前数据供排序使用
             currentTableData = filteredData;
