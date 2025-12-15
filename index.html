@@ -932,8 +932,7 @@
                     <span class="config-tip">💡 提示：点击左侧树节点，在右侧管理其下级成员</span>
                 </div>
                 <div class="config-toolbar-right">
-                    <button class="btn btn-default" id="btnDownloadTemplate">📄 下载模板</button>
-                    <button class="btn btn-default" id="btnCsvImport">📥 CSV导入</button>
+
                     <button class="btn btn-primary" id="btnSaveConfig">💾 保存配置</button>
                     <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
                 </div>
@@ -1533,25 +1532,9 @@
                 <!-- CSV导入说明 -->
                 <div style="margin-bottom: 20px;">
                     <p style="font-weight: 500; margin-bottom: 10px; color: #722ed1;">📥 CSV批量导入</p>
-                    <p style="font-size: 13px; color: rgba(0,0,0,0.65); margin-bottom: 10px;">
-                        支持通过CSV文件批量导入层级关系，适合一次性导入大量数据。
+                    <p style="font-size: 13px; color: rgba(0,0,0,0.45); margin-bottom: 10px;">
+                        <i>本期暂不支持 CSV 批量导入功能</i>
                     </p>
-                    <div style="background: #f6ffed; border: 1px solid #b7eb8f; border-radius: 4px; padding: 12px; margin-bottom: 10px;">
-                        <p style="font-size: 13px; margin: 0 0 8px 0;"><b>CSV格式要求（三列）：</b></p>
-                        <code style="display: block; background: #fff; padding: 10px; border-radius: 4px; font-size: 12px; line-height: 1.6;">
-                            总监,组长,业务员UID<br>
-                            总监1,组长1,U10001<br>
-                            总监1,组长1,U10002<br>
-                            总监1,组长2,U10003<br>
-                            总监2,组长1,U10004
-                        </code>
-                    </div>
-                    <ul style="font-size: 13px; color: rgba(0,0,0,0.65); padding-left: 20px; margin: 0;">
-                        <li>点击「📄 下载模板」获取标准格式模板</li>
-                        <li>如果总监/组长不存在，系统会自动创建</li>
-                        <li>已存在的业务员UID会自动跳过</li>
-                        <li>导入前会显示预览，确认后才执行</li>
-                    </ul>
                 </div>
 
                 <!-- 无归属用户说明 -->
@@ -2883,13 +2866,7 @@
             // 返回按钮点击事件
             document.getElementById('btnBackToStats').addEventListener('click', switchToStatsView);
 
-            // 下载模板按钮
-            document.getElementById('btnDownloadTemplate').addEventListener('click', downloadCsvTemplate);
 
-            // CSV导入按钮
-            document.getElementById('btnCsvImport').addEventListener('click', function() {
-                document.getElementById('csvFileInput').click();
-            });
 
             // CSV文件选择
             document.getElementById('csvFileInput').addEventListener('change', handleCsvImport);
